@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="{% static 'img/icon_1.png' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" /> 
+</head>
+<body>
+    {% block content %}{% endblock %}
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/all.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    {% block script %}{% endblock %}
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

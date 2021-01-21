@@ -1,0 +1,26 @@
+{% load static %}
+<svg class="floor" version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 651.6 358.8"
+    style="enable-background:new 0 0 651.6 358.8;" xml:space="preserve">
+    <style type="text/css">
+        .floor .st0{opacity:0;fill: #008cff; transition: opacity 300ms; cursor: pointer;}
+        .floor .st0.unavailable{fill: red; cursor: not-allowed;}
+        .floor .st0:hover{opacity: 0.4;}
+    </style>
+    <metadata>
+        <sfw  xmlns="&ns_sfw;">
+            <slices></slices>
+            <sliceSourceBounds  bottomLeftOrigin="true" height="358.8" width="651.6" x="357" y="204.2"></sliceSourceBounds>
+        </sfw>
+    </metadata>
+    <image style="overflow:visible;" width="1086" height="598" xlink:href="{% static 'img/floors/A,K-2,3,4,5,6,7.png' %}"  transform="matrix(0.6 0 0 0.6 0 0)">
+    </image>
+    {% if rooms %}
+    <polygon {% if rooms.0.available %}class="st0"{% else %}class="st0 unavailable"{% endif %} data-room="{{rooms.0.apartment_number}}" data-rooms="{{rooms.0.number_of_rooms}}" data-totArea="{{rooms.0.tot_area}}" data-totAreaRooms="{{rooms.0.tot_area_rooms}}" data-url="{% url 'room' building_label=building_label floor=floor.floor_number room=rooms.0.apartment_number %}" points="26.2,198.6 26.2,65 83.1,65 83.1,42.6 129.8,41.3 129.8,52.5 125,52.5 125.2,198.6 "/>
+    <polygon {% if rooms.1.available %}class="st0"{% else %}class="st0 unavailable"{% endif %} data-room="{{rooms.1.apartment_number}}" data-rooms="{{rooms.1.number_of_rooms}}" data-totArea="{{rooms.1.tot_area}}" data-totAreaRooms="{{rooms.1.tot_area_rooms}}" data-url="{% url 'room' building_label=building_label floor=floor.floor_number room=rooms.1.apartment_number %}" points="26.2,310.9 26.2,205.7 134.4,205.7 134.4,155.9 212,155.9 213.1,329 134.2,329 133.9,311.2 "/>
+    <polygon {% if rooms.2.available %}class="st0"{% else %}class="st0 unavailable"{% endif %} data-room="{{rooms.2.apartment_number}}" data-rooms="{{rooms.2.number_of_rooms}}" data-totArea="{{rooms.2.tot_area}}" data-totAreaRooms="{{rooms.2.tot_area_rooms}}" data-url="{% url 'room' building_label=building_label floor=floor.floor_number room=rooms.2.apartment_number %}" points="222,310.7 221.5,42.6 263.1,42.6 263.1,65 320.3,64.8 320.3,310.7 "/>
+    <polygon {% if rooms.3.available %}class="st0"{% else %}class="st0 unavailable"{% endif %} data-room="{{rooms.3.apartment_number}}" data-rooms="{{rooms.3.number_of_rooms}}" data-totArea="{{rooms.3.tot_area}}" data-totAreaRooms="{{rooms.3.tot_area_rooms}}" data-url="{% url 'room' building_label=building_label floor=floor.floor_number room=rooms.3.apartment_number %}" points="329.5,310.7 329.5,64.5 386.7,64.5 385.7,42.6 428.8,42.6 428.8,310.7 "/>
+    <polygon {% if rooms.4.available %}class="st0"{% else %}class="st0 unavailable"{% endif %} data-room="{{rooms.4.apartment_number}}" data-rooms="{{rooms.4.number_of_rooms}}" data-totArea="{{rooms.4.tot_area}}" data-totAreaRooms="{{rooms.4.tot_area_rooms}}" data-url="{% url 'room' building_label=building_label floor=floor.floor_number room=rooms.4.apartment_number %}" points="438,329.3 437.5,155.9 516.1,155.9 516.1,220.8 576.1,220.5 576.1,311.9 516.4,312.2 516.4,329.3 "/>
+    <polygon {% if rooms.5.available %}class="st0"{% else %}class="st0 unavailable"{% endif %} data-room="{{rooms.5.apartment_number}}" data-rooms="{{rooms.5.number_of_rooms}}" data-totArea="{{rooms.5.tot_area}}" data-totAreaRooms="{{rooms.5.tot_area_rooms}}" data-url="{% url 'room' building_label=building_label floor=floor.floor_number room=rooms.5.apartment_number %}" points="524.6,213.9 525.3,42.1 567.2,42.1 567.2,64.8 624.9,64.5 624.9,311.7 582,311.7 582,213.6 "/>
+    {% endif %}
+</svg>

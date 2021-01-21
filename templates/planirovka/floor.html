@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Oqsaroy{% endblock %}
+{% block content %}
+    <div class="main main-floor" style="background: #c0fffa;">
+        <div class="planirovka-top-mobile">
+			<img src="{% static 'img/icons/arrow-back.png' %}" class="back-arrow" alt="">
+			<div class="block-logo">
+				<img src="{% static 'img/icons/logo_1_1.png' %}" alt="Oq saroy">
+				<img src="{% static 'img/icons/logo_1_2.png' %}" alt="Residence">
+			</div>
+			<button class="alt-map-btn" id="openMap">
+			</button>
+		</div>
+        <div class="main-content-planirovka">
+            <div class="main-content-inner">
+                <div class="floor-label">
+                    <p class="mb-0">{{building_label}} block</p>
+                    <p>{{floor.floor_number}} - qavat</p>
+                </div>
+                <div class="text-center">
+					{% include floor.template %}
+                </div>
+            </div>
+        </div>
+        <div class="sidebar sidebar-planirovka sidebar-floor">
+            <div class="header">
+                <div>
+                    <img src="{% static 'img/icons/arrow-back.png' %}" class="back-arrow" id="goBack" alt="">
+                </div>
+                <div class="block-logo">
+                    <img src="{% static 'img/icons/logo_1_1.png' %}" alt="Oq saroy">
+                    <img src="{% static 'img/icons/logo_1_2.png' %}" alt="Residence">
+                </div>
+            </div>
+            <div class="floor-indicator">
+                <div class="inner h-100">
+                    <div class="floor-nav">
+                        {% if floors %}
+                            {% for f in floors %}
+                                <span
+                                {% if f.floor_number == floor.floor_number %}
+                                class="floor-nav-item item-active"
+                                {% elif f and f.available %} 
+                                class="floor-nav-item item-available"
+                                {% else %}
+                                class="floor-nav-item item-unavailable"
+                                {% endif %}
+                                >
+                                {% if f %}
+                                    {{f.floor_number}}
+                                {% else %}
+                                    {{forloop.counter}}
+                                {% endif %}</span>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <div class="room-indicator-block text-center" style="width: 95%;">
+						<button class="ctrl" id="roomPrev">-</button>
+						<div class="indicator">
+							<span class="f-room-indicator" id="fRoomIndicator" data-value="0">-</span>
+							<span class="subtitle">Xona</span>
+						</div>
+						<button class="ctrl" id="roomNext">+</button>
+					</div>
+                    <div class="apartment-specs">
+                        <div>
+                            <span class="indicator room" id="roomNum">-</span>
+                            <span class="subtitle">xonali xonadon</span>
+                        </div>
+                        <div>
+                            <span class="indicator tot-area"><span id="totAreaApartment">-</span> m<sup>2</sup></span>
+                            <span class="subtitle">Umumiy maydon</span>
+                        </div>
+                        <div>
+                            <span class="indicator tot-area-room"><span id="totAreaRooms">-</span> m<sup>2</sup></span>
+                            <span class="subtitle">Xona umumiy maydoni</span>
+                        </div>
+                    </div>
+                    <button class="disabled" id="exploreRoom">Xonani ko'rmoq</button>
+                </div>
+            </div>
+            <div class="map-alt">
+                <div class="inner position-relative">
+					<button class="close-map" id="closeMap">&times;</button>
+					{% include 'partials/map-alt.html' %}
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

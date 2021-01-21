@@ -1,0 +1,536 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Oqsaroy{% endblock %}
+
+{% block content %}
+<div class="preloaderBg" id="preloader">
+    <div class="wrapper">
+        <div class="preloader"></div>
+        <div class="preloader2"></div>
+    </div>
+</div>
+<div class="main h-100">
+    <nav class="top-nav">
+        <button class="toggler">
+            <img src="{% static 'img/icons/menu.png' %}" alt="">
+        </button>
+        <div class="text-center navbar-brand-block">
+            <a class="navbar-brand ml-3" href="/">
+                <img src="{% static 'img/icons/logo_1_1.png' %}" alt="Oq saroy">
+                <img src="{% static 'img/icons/logo_1_2.png' %}" alt="Residence">
+            </a>
+        </div>
+        <div class="ml-auto block-contact">
+            <span class="contact"><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;+998 99 999 99 99</span>
+        </div>
+    </nav>
+    <div class="sidebar" id="sidebar">
+        <div class="inner">
+            <button class="close">
+                &#10005;
+            </button>
+            <nav class="sidebar-nav" id="indexSidebar">
+                <a href="/" class="navbar-brand mb-4">
+                    <img src="{% static 'img/icons/logo_1_1.png' %}" alt="Oq saroy">
+                    <img src="{% static 'img/icons/logo_1_2.png' %}" alt="Residence">
+                </a>
+                <ul class="nav-list list-unstyled">
+                    <li class="nav-item">
+                        <div class="nav-item-indicator">
+                            <div class="layer-1">
+                                <div class="layer-0"></div>
+                            </div>
+                        </div>
+                        <a class="nav-link active" href="#home">Главная</a> 
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-item-indicator">
+                            <div class="layer-1">
+                                <div class="layer-0"></div>
+                            </div>
+                        </div>
+                        <a class="nav-link" href="#comfort">Комфорт</a> 
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-item-indicator">
+                            <div class="layer-1">
+                                <div class="layer-0"></div>
+                            </div>
+                        </div>
+                        <a class="nav-link" href="#planirovka">Планировки</a> 
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-item-indicator">
+                            <div class="layer-1">
+                                <div class="layer-0"></div>
+                            </div>
+                        </div>
+                        <a class="nav-link" href="#location">Расположение</a> 
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-item-indicator">
+                            <div class="layer-1">
+                                <div class="layer-0"></div>
+                            </div>
+                        </div>
+                        <a class="nav-link" href="#advantages">Преимущества</a> 
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-item-indicator">
+                            <div class="layer-1">
+                                <div class="layer-0"></div>
+                            </div>
+                        </div>
+                        <a class="nav-link" href="#commerce">Квартира для всей семьи</a> 
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-item-indicator">
+                            <div class="layer-1">
+                                <div class="layer-0"></div>
+                            </div>
+                        </div>
+                        <a class="nav-link" href="#progress">Этапы строительства</a> 
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-item-indicator">
+                            <div class="layer-1">
+                                <div class="layer-0"></div>
+                            </div>
+                        </div>
+                        <a class="nav-link" href="#about">О компании</a> 
+                    </li>
+                </ul>
+            </nav>
+            <div class="site-lang">
+                <a href="/ru" class="active">
+                    <img src="{% static 'img/icons/flag-russian-round-250.png' %}" width="13px" height="13px" alt=""> Рус
+                </a>
+                <a href="/uz">
+                    <img src="{% static 'img/icons/flag-uzb-round-250.png' %}" width="13px" height="13px" alt=""> O‘zb
+                </a>
+            </div>
+            <div class="sidebar-footer">
+                <dl>
+                    <dt>Колл-центр</dt>
+                    <dd>+998 99 999 99 99</dd>
+                    <dt>Адрес</dt>
+                    <dd>Улица Паркент, Мирзо-Улугбекский район, город Ташкент</dd>
+                </dl>
+                <ul class="social-media">
+                    <a href="http://www.instagram.com/urbanstroy.uz" target="_blank">
+                        <img src="{% static 'img/icons/Instagram-Icon.png' %}" alt="">
+                        <div class="social-name">
+                            <div class="position-relative">
+                                <span>@urbanstroy.uz</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://www.facebook.com/urbanstroy.uz" target="_blank">
+                        <img src="{% static 'img/icons/facebook-icon-alt.png' %}" alt="">
+                        <div class="social-name">
+                            <div class="position-relative">
+                                <span>@urbanstroy.uz</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://t.me/urban_stroyuz" target="_blank">
+                        <img src="{% static 'img/icons/Telegram-Icon.png' %}" alt="">
+                        <div class="social-name">
+                            <div class="position-relative">
+                                <span>@urban_stroyuz</span>
+                            </div>
+                        </div>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="main-content-inner">
+            <section class="section section-home" id='home'>
+                <div class="header text-center">
+                    <div class="logo-block">
+                        <img src="{% static 'img/icons/logo_2_1.png' %}" alt="">
+                        <img src="{% static 'img/icons/logo_2_2.png' %}" alt="">
+                    </div>
+                    <p class="content text-white">особенный и современный дом</p>
+                    <a href="#"><img class="m-1" src="{% static 'img/key.png' %}" alt="">подобрать квартиру</a>
+                </div>
+            </section>
+            <section class="section comfort comfort-1" id="comfort">
+                <div class="content">
+                    <h1 class="text-white">САМОЕ ДЛИННОЕ ДЕТСТВО</h1>
+                    <p class="text-white">90 метров безопасного пространства для игр, веселья и спорта</p>
+                    <a href="#" class="text-white">УЗНАТЬ БОЛЬШЕ</a>
+                </div>
+                <div class="footer">
+                    <ul class="list-unstyled m-0">
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/home.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                ИГРОВЫЕ КОМПЛЕКСЫ
+                            </div>
+                        </li>
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/camera.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                БЕЗОПАСНОЕ ПОКРЫТИЕ 
+                            </div>
+                        </li>
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/soccer-field.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                CПОРТИВНЫЕ ПЛОЩАДКИ
+                            </div>
+                        </li>
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/factoids.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                CПОРТИВНЫЕ ПЛОЩАДКИ
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section comfort comfort-2">
+                <div class="content">
+                    <h1 class="text-white">САМЫЙ ПРОДУМАННЫЙ ДВОР</h1>
+                    <p class="text-white">100 метров освещенной аллеи для неспешных прогулок</p>
+                    <a href="#" class="text-white">УЗНАТЬ БОЛЬШЕ</a>
+                </div>
+                <div class="footer">
+                    <ul class="list-unstyled m-0">
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/road-barrier.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                ЗАКРЫТАЯ ТЕРРИТОРИЯ
+                            </div>
+                        </li>
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/wifi.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                БЕСПЛАТНЫЙ ИНТЕРНЕТ
+                            </div>
+                        </li>
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/besedka.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                БЕСЕДКИ ДЛЯ ОТДЫХА
+                            </div>
+                        </li>
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/camera-alt.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                ОХРАНЯЕМАЯ ПАРКОВКА
+                            </div>
+                        </li>
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/fitness.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                КРЫТЫЕ ТРЕНАЖЕРЫ
+                            </div>
+                        </li>
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/barbeque.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                БАРБЕКЮ-ЗОНЫ
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section comfort comfort-3">
+                <div class="content">
+                    <h1 class="text-white">ПОЕХАЛИ В МАГАЗИН?</h1>
+                    <p class="text-white">3 бесшумных лифта в каждой секции — прямо к магазинам в цокольных этажах</p>
+                    <a href="#" class="text-white">УЗНАТЬ БОЛЬШЕ</a>
+                </div>
+                <div class="footer">
+                    <ul class="list-unstyled m-0">
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/wheel.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                КОЛЯСОЧНЫЕ ПАНДУСЫ
+                            </div>
+                        </li>
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/door-handle.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                СКВОЗНЫЕ ПОДЪЕЗДЫ
+                            </div>
+                        </li>
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/cart.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                МАГАЗИНЫ И КАФЕ
+                            </div>
+                        </li>
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/home-alt.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                ТОРГОВАЯ ГАЛЕРЕЯ
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section comfort comfort-4">
+                <div class="content">
+                    <h1 class="text-white">CАМЫЙ КОМФОРТНЫЙ ДОМ</h1>
+                    <p class="text-white">Квартиры с предчистовой отделкой и разведенной электропроводкой - вам остается только выбрать дизайн и перевезти мебель</p>
+                    <a href="#" class="text-white">УЗНАТЬ БОЛЬШЕ</a>
+                </div>
+                <div class="footer">
+                    <ul class="list-unstyled m-0">
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/window.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                ПАНОРАМНОЕ ОСТЕКЛЕНИЕ
+                            </div>
+                        </li>
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/glass-door.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                СТАЛЬНЫЕ ВХОДНЫЕ ДВЕРИ
+                            </div>
+                        </li>
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/loggy.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                ЗАСТЕКЛЕННЫЕ ЛОДЖИИ
+                            </div>
+                        </li>
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/brick.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                МОНОЛИТ- КИРПИЧ
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section section-planirovka q" id="planirovka">
+                {% include 'partials/planirovka_main.html' %}
+            </section>
+            <section class="section section-location" id="location">
+                <div class="row m-0 h-100">
+                    <div class="map-sidebar">
+                        <div class="inner h-100">
+                            <h4>САМАЯ УДОБНАЯ РАЗВЯЗКА В ГОРОДЕ</h4>
+                            <p style="color:rgb(79, 79, 79);">Всё для жизни в 15 минутах от дома</p>
+                            <div>
+                                <ul class="filter-controls list-unstyled" id="filterControls"
+                                data-oqsaroyPmark={% static '/img/oqsaroy_placemark.png' %} data-urbanPmark={% static '/img/urban_pmark.png' %}
+                                data-shopPmark={% static '/img/shop_pmark.png' %} data-restaurantPmark={% static '/img/restaurant_pmark.png' %}
+                                data-busstopPmark={% static '/img/busstop_pmark.png' %} data-hospitalPmark={% static '/img/hospital_pmark.png' %}>
+                                    <li class="filter-item filter-all">
+                                        <span>Все объекты</span>
+                                    </li>
+                                    <li class="filter-item filter-shops">
+                                        <span>Магазины и супермаркеты</span>
+                                    </li>
+                                    <li class="filter-item filter-restaurants">
+                                        <span>Рестораны и кафе</span>
+                                    </li>
+                                    <li class="filter-item filter-hospitals">
+                                        <span>Больница и поликлиника</span>
+                                    </li>
+                                    <li class="filter-item filter-busstops">
+                                        <span>Остановки</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <h4 class="footer">ПЕШКОМ</h4>
+                            <ul class="location-distances list-unstyled">
+                                <li class="item">
+                                    <div class="time">10 мин</div>
+                                    <div class="destination">Детская поликлиника</div>
+                                </li>
+                                <li class="item">
+                                    <div class="time">10 мин</div>
+                                    <div class="destination">Три парка</div>
+                                </li>
+                                <li class="item">
+                                    <div class="time">10 мин</div>
+                                    <div class="destination">Дельфинарий и ледовый дворец</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="map" style="height: 100%; width: 75%;"></div>
+                </div>
+            </section>
+            <section class="section section-advantages" id="advantages">
+                <div class="inner h-100 m-0">
+                    <div class="element">
+                        <div class="block" style="background: url({% static 'img/advs_1.png' %}) no-repeat; background-size: cover;">
+                            <div class="overlay">
+                                <div class="inner">
+                                    <h4 class="header">РАЗНООБРАЗНЫЙ ДОМ</h4>
+                                    <p class="content">
+                                        Панорамное остекление 
+                                        Дома с панорамным остеклением, это модно, престижно, эстетично.
+                                        Такое остекление максимально наполняет помещение естественным светом, визуально увеличивает площадь, и выигрышно оформляет фасад здания.
+                                        Особенно эффектно смотрится в домах классического стиля ЖК OQ SAROY.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="element">
+                        <div class="block" style="background: url({% static 'img/advs_2.png' %}) no-repeat; background-size: cover;">
+                            <div class="overlay">
+                                <div class="inner">
+                                    <h4 class="header">РАЗВИТАЯ ИНФРАСТРУКТУРА</h4>
+                                    <p class="content">Транспортная развязка рядом с домом — более 20 маршрутов по всем направлениям.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="element">
+                        <div class="block" style="background: url({% static 'img/advs_3.png' %}) no-repeat; background-size: cover;">
+                            <div class="overlay">
+                                <div class="inner">
+                                    <h4 class="header">ПРИДОМОВАЯ ТЕРРИТОРИЯ<</h4>
+                                    <p class="content">Безопасный двор площадью 3000 м2 c эксклюзивной детской площадкой, беседками, 
+                                        фонтанами, освещением в любое время суток, а также магазины, ресторан и фаст-фуд, расположенные на первых этажах комплекса.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="element">
+                        <div class="block" style="background: url({% static 'img/advs_4.png' %}) no-repeat; background-size: cover;">
+                            <div class="overlay">
+                                <div class="inner">
+                                    <h4 class="header">ПЕРСПЕКТИВНЫЙ РАЙОН</h4>
+                                    <p class="content">Около дома четыре школы, частные и государственные детские сады, больница, Паркентский рынок, 
+                                        SPA-салоны, салоны красоты. В десяти минутах пешком - детская поликлиника. У дома транспортная развязка с маршрутами во все концы города.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="element">
+                        <div class="block" style="background: url({% static 'img/advs_5.png' %}) no-repeat; background-size: cover;">
+                            <div class="overlay">
+                                <div class="inner">
+                                    <h4 class="header">СОВРЕМЕННЫЕ ДИЗАЙН-ПРОЕКТЫ</h4>
+                                    <p class="content">Уникальный дизайн интерьера и планировки для вашего типа семьи - выбирайте то, что удобно вам: 
+                                        все квартиры оборудованы двухконтурнимы котеламы. 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="element">
+                        <div class="block" style="background: url({% static 'img/advs_6.png' %}) no-repeat; background-size: cover;">
+                            <div class="overlay">
+                                <div class="inner">
+                                    <h4 class="header">ШОППИНГ НА СВОЕЙ ТЕРРИТОРИИ</h4>
+                                    <p class="content">Магазины, услуги и развлечения прямо на территории вашего дома. Обязательно 
+                                        зайдите в гости к соседям — в ресторан
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section section-commerce" style="height: 100vh;" id="commerce">
+                <div class="content">
+                    <h1 class="text-white">КВАРТИРА ДЛЯ ВСЕЙ СЕМЬИ</h1>
+                    <a href="#" class="text-white mt-1">УЗНАТЬ БОЛЬШЕ</a>
+                </div>
+                <div class="footer">
+                    <ul class="list-unstyled m-0">
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/icon.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                ПЛОЩАДЫ ОТ 57 ДО 263
+                            </div>
+                        </li>
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/family.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                ПОДХОДЯТ ДЛЯ ЛЮБЫХ СЕМЕЙ
+                            </div>
+                        </li>
+                        <li class="text-white">
+                            <img src="{% static 'img/icons/doors.png' %}" alt="">
+                            <div class="subtitle ml-3">
+                                СОВРЕМЕННЫЙ ПОДЪЕЗД
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section section-progress" id="progress">
+                <div class="content">
+                    <h1 class="text-white">ЭТАПЫ СТРОИТЕЛЬСТВА</h1>
+                    <a href="#" class="text-white mt-1">УЗНАТЬ БОЛЬШЕ</a>
+                </div>
+            </section>
+            <section class="section section-about">
+                <div class="inner">
+                    <div class="block-logo">
+                        <img src="{% static 'img/icons/urban_logo.png' %}" alt="Urban Stroy">
+                    </div>
+                    <h2>О КОМПАНИИ URBAN STROY</h2>
+                    <div class="content">
+                        <p>
+                            Urban Story - является динамично развивающейся строительной компанией с большим 
+                            опытом работы в сфере жилищного строительства.
+                        </p>
+                        <p>
+                            Компания реализует широкий спектр проектов жилищного строительства различных типов и классов: 
+                            от эксклюзивных объектов премиум и бизнес-класса до комфортного жилья.
+                        </p>
+                    </div>
+                    <div class="statistics">
+                        <div class="row m-0">
+                            <div class="col-md-3 col-sm-6 element">
+                                <div class="text-center">
+                                    <p class="stat">+11 000 м<sup>2</sup></p>
+                                    <p class="subtitle">Введено в эксплуатацию</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 element">
+                                <div class="text-center">
+                                    <p class="stat">300+</p>
+                                    <p class="subtitle">Счастливые Семьи</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 element">
+                                <div class="text-center">
+                                    <p class="stat">2</p>
+                                    <p class="subtitle">Жилых Комплекса</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 element">
+                                <div class="text-center">
+                                    <p class="stat">2</p>
+                                    <p class="subtitle">Парковки</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="https://urbanstroy.uz" class="link" target="blank">urbanstroy.uz</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="https://api-maps.yandex.ru/2.1/?apikey=9548b8a6-f9ad-413d-b067-ecaf8410d587&lang=ru_RU&region=UZB" 
+        type="text/javascript">
+</script>
+<script src="{% static 'js/map.js' %}"></script>
+{% endblock %}
