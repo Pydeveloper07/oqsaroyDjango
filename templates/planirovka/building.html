@@ -18,7 +18,7 @@
 	<div class="main-content-planirovka">
 		<div class="main-content-inner">
 			<div class="block-label">
-				<img src="{% static 'img/buildings/A/letter_A.png' %}" width="170px" alt="">
+				<img src="{% static 'img/buildings/letters/'|add:building.building_label|add:'.svg' %}" width="170px" alt="">
 			</div>
 			<div class="text-center">
 				{% include building.template %}

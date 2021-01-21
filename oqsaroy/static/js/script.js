@@ -214,10 +214,19 @@ $(document).ready(function () {
         }
     });
     $('#mapBuildings .st0').click(function () { 
+        if ($(this).attr('class').indexOf('unavailable') !== -1){
+            return;
+        }
         var url = $(this).attr('data-url');
         window.location.href = url;
     });
     $('.back-arrow').click(function(){
         window.history.back();
+    });
+    $('#floorNavigator .floor-nav-item').click(function(){
+        if ($(this).hasClass('item-active') || $(this).hasClass('item-unavailable') || !$(this).attr('data-url')){
+            return;
+        }
+        window.location.href = $(this).attr('data-url');
     });
 });

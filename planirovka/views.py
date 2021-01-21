@@ -3,6 +3,7 @@ from .models import Building, Floor, Apartment
 
 def render_building(request, building_label):
     building = get_object_or_404(Building, building_label=building_label)
+    buildings = Building.objects.all().order_by('building_label')
     floors = Floor.objects.filter(building=building).order_by('floor_number')
     floor_list = []
     j = 0
@@ -20,6 +21,7 @@ def render_building(request, building_label):
             aval_apartments_list.append('-')
     context = {
         'building':building,
+        'buildings': buildings,
         'floors': floor_list,
         'aval_apartments':aval_apartments_list
     }
@@ -27,6 +29,7 @@ def render_building(request, building_label):
 
 def render_floor(request, building_label, floor):
     building = Building.objects.get(building_label=building_label)
+    buildings = Building.objects.all().order_by('building_label')
     floor = get_object_or_404(Floor, floor_number=floor, building=building)
     floors = Floor.objects.filter(building=building_label).order_by('floor_number')
     rooms = floor.rooms.order_by('apartment_number')
@@ -39,7 +42,9 @@ def render_floor(request, building_label, floor):
         else:
             floor_list.append(None)
     context = {
+        'building': building,
         'building_label': building_label,
+        'buildings':buildings,
         'floor': floor,
         'floors': floor_list,
         'rooms': rooms
@@ -48,8 +53,10 @@ def render_floor(request, building_label, floor):
 
 def render_room(request, building_label, floor, room):
     room = get_object_or_404(Floor, floor_number=floor, building=Building.objects.get(building_label=building_label)).rooms.get(apartment_number=room)
+    buildings = Building.objects.all().order_by('building_label')
     context = {
         'building_label': building_label,
+        'buildings': buildings,
         'floor': floor,
         'room': room
     }

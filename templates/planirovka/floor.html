@@ -37,7 +37,7 @@
             </div>
             <div class="floor-indicator">
                 <div class="inner h-100">
-                    <div class="floor-nav">
+                    <div class="floor-nav" id="floorNavigator">
                         {% if floors %}
                             {% for f in floors %}
                                 <span
@@ -47,6 +47,11 @@
                                 class="floor-nav-item item-available"
                                 {% else %}
                                 class="floor-nav-item item-unavailable"
+                                {% endif %}
+                                {% if f %}
+                                data-url="{% url 'floor' building_label=building.building_label floor=f.floor_number %}"
+                                {% else %}
+                                data-url=""
                                 {% endif %}
                                 >
                                 {% if f %}
