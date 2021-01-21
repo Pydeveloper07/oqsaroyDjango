@@ -27,7 +27,7 @@ class Building(models.Model):
     building_label = models.CharField(max_length=1, primary_key=True)
     number_of_floors = models.IntegerField()
     available = models.BooleanField(default=True)
-    template = models.CharField(max_length=100, null=False, blank=False)
+    template = models.CharField(max_length=100, null=True, blank=True)
     def __str__(self):
         return self.building_label
     
@@ -35,7 +35,7 @@ class Building(models.Model):
 class Floor(models.Model):
     floor_number = models.IntegerField()
     available = models.BooleanField(default=True)
-    template = models.CharField(max_length=100, null=False, blank=False)
+    template = models.CharField(max_length=100, null=True, blank=True)
     building = models.ForeignKey(Building, on_delete=models.SET_NULL, null=True, related_name="floors")
 
     def __str__(self):
