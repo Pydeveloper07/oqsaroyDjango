@@ -17,8 +17,20 @@
         <div class="main-content-planirovka">
             <div class="main-content-inner">
                 <div class="floor-label">
-                    <p class="mb-0">{{building_label}} block</p>
-                    <p>{{floor.floor_number}} - qavat</p>
+                    <p class="mb-0">{{building_label}} 
+                        {% if request.session.lang == 'uz' %}
+                        block
+                        {% else %}
+                        блок
+                        {% endif %}
+                    </p>
+                    <p>{{floor.floor_number}} - 
+                        {% if request.session.lang == 'uz' %}
+                        qavat
+                        {% else %}
+                        ой этаж
+                        {% endif %}
+                    </p>
                 </div>
                 <div class="text-center">
 					{% include floor.template %}
@@ -66,25 +78,67 @@
 						<button class="ctrl" id="roomPrev">-</button>
 						<div class="indicator">
 							<span class="f-room-indicator" id="fRoomIndicator" data-value="0">-</span>
-							<span class="subtitle">Xona</span>
+							<span class="subtitle">
+                                {% if request.session.lang == 'uz' %}
+                                Xonadon
+                                {% else %}
+                                Квартира
+                                {% endif %}
+                            </span>
 						</div>
 						<button class="ctrl" id="roomNext">+</button>
 					</div>
                     <div class="apartment-specs">
                         <div>
                             <span class="indicator room" id="roomNum">-</span>
-                            <span class="subtitle">xonali xonadon</span>
+                            <span class="subtitle">
+                                {% if request.session.lang == 'uz' %}
+                                xonali xonadon
+                                {% else %}
+                                комнатная квартира
+                                {% endif %}
+                            </span>
                         </div>
                         <div>
-                            <span class="indicator tot-area"><span id="totAreaApartment">-</span> m<sup>2</sup></span>
-                            <span class="subtitle">Umumiy maydon</span>
+                            <span class="indicator tot-area"><span id="totAreaApartment">-</span> 
+                            {% if request.session.lang == 'uz' %}
+                            m
+                            {% else %}
+                            м
+                            {% endif %}
+                            <sup>2</sup></span>
+                            <span class="subtitle">
+                                {% if request.session.lang == 'uz' %}
+                                Umumiy maydon
+                                {% else %}
+                                Общая площадь
+                                {% endif %}
+                            </span>
                         </div>
                         <div>
-                            <span class="indicator tot-area-room"><span id="totAreaRooms">-</span> m<sup>2</sup></span>
-                            <span class="subtitle">Xona umumiy maydoni</span>
+                            <span class="indicator tot-area-room"><span id="totAreaRooms">-</span> 
+                            {% if request.session.lang == 'uz' %}
+                            m
+                            {% else %}
+                            м
+                            {% endif %}
+                            <sup>2</sup></span>
+                            <span class="subtitle">
+                                {% if request.session.lang == 'uz' %}
+                                Xonadon umumiy maydoni
+                                {% else %}
+                                Общая площадь комнаты
+                                {% endif %}
+                            </span>
                         </div>
                     </div>
-                    <button class="disabled" id="exploreRoom">Xonani ko'rmoq</button>
+                    <button class="disabled" id="exploreRoom">
+                        {% if request.session.lang == 'uz' %}
+                        Xonadonni ko'rmoq
+                        {% else %}
+                        Видеть квартиру
+                        {% endif %}
+                    </button>
                 </div>
             </div>
             <div class="map-alt">

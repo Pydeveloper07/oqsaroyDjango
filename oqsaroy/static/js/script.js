@@ -1,8 +1,16 @@
 $(window).load(function(){
-    $('#preloader').fadeOut('slow');
-    $('body').css({
-        'overflow': 'scroll'
-    });
+    function preLoader(){
+        $('#preloader').fadeOut('slow');
+         $('body').css({
+            'overflow': 'scroll'
+        });
+    }
+    if (!sessionStorage.getItem( 'doNotShow')) {
+        sessionStorage.setItem('doNotShow', true);
+        preLoader();
+    } else {
+       $('#preloader').hide();
+    }
 });
 $(document).ready(function () {
     $('body').scrollspy({ target: '#indexSidebar' });

@@ -17,7 +17,7 @@
             <img src="{% static 'img/icons/menu.png' %}" alt="">
         </button>
         <div class="text-center navbar-brand-block">
-            <a class="navbar-brand ml-3" href="/">
+            <a class="navbar-brand ml-3" href="#home">
                 <img src="{% static 'img/icons/logo_1_1.png' %}" alt="Oq saroy">
                 <img src="{% static 'img/icons/logo_1_2.png' %}" alt="Residence">
             </a>
@@ -32,7 +32,7 @@
                 &#10005;
             </button>
             <nav class="sidebar-nav" id="indexSidebar">
-                <a href="/" class="navbar-brand mb-4">
+                <a href="#home" class="navbar-brand mb-4">
                     <img src="{% static 'img/icons/logo_1_1.png' %}" alt="Oq saroy">
                     <img src="{% static 'img/icons/logo_1_2.png' %}" alt="Residence">
                 </a>
@@ -43,7 +43,13 @@
                                 <div class="layer-0"></div>
                             </div>
                         </div>
-                        <a class="nav-link active" href="#home">Главная</a> 
+                        <a class="nav-link active" href="#home">
+                            {% if request.session.lang == 'uz' %}
+                            Bosh menyu
+                            {% else %}
+                            Главная
+                            {% endif %}
+                        </a> 
                     </li>
                     <li class="nav-item">
                         <div class="nav-item-indicator">
@@ -51,7 +57,13 @@
                                 <div class="layer-0"></div>
                             </div>
                         </div>
-                        <a class="nav-link" href="#comfort">Комфорт</a> 
+                        <a class="nav-link" href="#comfort">
+                            {% if request.session.lang == 'uz' %}
+                            Qulaylik
+                            {% else %}
+                            Комфорт
+                            {% endif %}
+                        </a> 
                     </li>
                     <li class="nav-item">
                         <div class="nav-item-indicator">
@@ -59,7 +71,13 @@
                                 <div class="layer-0"></div>
                             </div>
                         </div>
-                        <a class="nav-link" href="#planirovka">Планировки</a> 
+                        <a class="nav-link" href="#planirovka">
+                            {% if request.session.lang == 'uz' %}
+                            Maket
+                            {% else %}
+                            Планировки
+                            {% endif %}
+                        </a> 
                     </li>
                     <li class="nav-item">
                         <div class="nav-item-indicator">
@@ -67,7 +85,13 @@
                                 <div class="layer-0"></div>
                             </div>
                         </div>
-                        <a class="nav-link" href="#location">Расположение</a> 
+                        <a class="nav-link" href="#location">
+                            {% if request.session.lang == 'uz' %}
+                            Joylashuv
+                            {% else %}
+                            Расположение
+                            {% endif %}
+                        </a> 
                     </li>
                     <li class="nav-item">
                         <div class="nav-item-indicator">
@@ -75,7 +99,13 @@
                                 <div class="layer-0"></div>
                             </div>
                         </div>
-                        <a class="nav-link" href="#advantages">Преимущества</a> 
+                        <a class="nav-link" href="#advantages">
+                            {% if request.session.lang == 'uz' %}
+                            Afzalliklari
+                            {% else %}
+                            Преимущества
+                            {% endif %}
+                        </a> 
                     </li>
                     <li class="nav-item">
                         <div class="nav-item-indicator">
@@ -83,7 +113,13 @@
                                 <div class="layer-0"></div>
                             </div>
                         </div>
-                        <a class="nav-link" href="#commerce">Квартира для всей семьи</a> 
+                        <a class="nav-link" href="#commerce">
+                            {% if request.session.lang == 'uz' %}
+                            Barcha oila uchun xonadon
+                            {% else %}
+                            Квартира для всей семьи
+                            {% endif %}
+                        </a> 
                     </li>
                     <li class="nav-item">
                         <div class="nav-item-indicator">
@@ -91,7 +127,13 @@
                                 <div class="layer-0"></div>
                             </div>
                         </div>
-                        <a class="nav-link" href="#progress">Этапы строительства</a> 
+                        <a class="nav-link" href="#progress">
+                            {% if request.session.lang == 'uz' %}
+                            Qurulish bosqichlari
+                            {% else %}
+                            Этапы строительства
+                            {% endif %}
+                        </a> 
                     </li>
                     <li class="nav-item">
                         <div class="nav-item-indicator">
@@ -99,24 +141,54 @@
                                 <div class="layer-0"></div>
                             </div>
                         </div>
-                        <a class="nav-link" href="#about">О компании</a> 
+                        <a class="nav-link" href="#about">
+                            {% if request.session.lang == 'uz' %}
+                            Kompaniya haqida
+                            {% else %}
+                            О компании
+                            {% endif %}
+                        </a> 
                     </li>
                 </ul>
             </nav>
             <div class="site-lang">
-                <a href="/ru" class="active">
+                <a href="{% url 'ru' %}" 
+                {% if 'ru' in request.path %}
+                class="active"
+                {% endif %}>
                     <img src="{% static 'img/icons/flag-russian-round-250.png' %}" width="13px" height="13px" alt=""> Рус
                 </a>
-                <a href="/uz">
+                <a href="{% url 'uz' %}"
+                {% if 'uz' in request.path %}
+                class="active"
+                {% endif %}>
                     <img src="{% static 'img/icons/flag-uzb-round-250.png' %}" width="13px" height="13px" alt=""> O‘zb
                 </a>
             </div>
             <div class="sidebar-footer">
                 <dl>
-                    <dt>Колл-центр</dt>
+                    <dt>
+                        {% if request.session.lang == 'uz' %}
+                        Biz bilan bog'lanish
+                        {% else %}
+                        Колл-центр
+                        {% endif %}
+                    </dt>
                     <dd>+998 99 999 99 99</dd>
-                    <dt>Адрес</dt>
-                    <dd>Улица Паркент, Мирзо-Улугбекский район, город Ташкент</dd>
+                    <dt>
+                        {% if request.session.lang == 'uz' %}
+                        Manzil
+                        {% else %}
+                        Адрес
+                        {% endif %}
+                    </dt>
+                    <dd>
+                        {% if request.session.lang == 'uz' %}
+                        Toshkent shahri, Mirzo-Ulug'bek tumani, Parkent ko'casi
+                        {% else %}
+                        Улица Паркент, Мирзо-Улугбекский район, город Ташкент
+                        {% endif %}
+                    </dd>
                 </dl>
                 <ul class="social-media">
                     <a href="http://www.instagram.com/urbanstroy.uz" target="_blank">
@@ -155,40 +227,86 @@
                         <img src="{% static 'img/icons/logo_2_1.png' %}" alt="">
                         <img src="{% static 'img/icons/logo_2_2.png' %}" alt="">
                     </div>
-                    <p class="content text-white">особенный и современный дом</p>
-                    <a href="#"><img class="m-1" src="{% static 'img/key.png' %}" alt="">подобрать квартиру</a>
+                    <p class="content text-white">
+                        {% if request.session.lang == 'uz' %}
+                        O'zgacha va zamonaviy uy
+                        {% else %}
+                        особенный и современный дом
+                        {% endif %}
+                    </p>
+                    <a href="#planirovka"><img class="m-1" src="{% static 'img/key.png' %}" alt="">
+                        {% if request.session.lang == 'uz' %}
+                        Xonadon tanlash
+                        {% else %}
+                        подобрать квартиру
+                        {% endif %}
+                    </a>
                 </div>
             </section>
             <section class="section comfort comfort-1" id="comfort">
                 <div class="content">
-                    <h1 class="text-white">САМОЕ ДЛИННОЕ ДЕТСТВО</h1>
-                    <p class="text-white">90 метров безопасного пространства для игр, веселья и спорта</p>
-                    <a href="#" class="text-white">УЗНАТЬ БОЛЬШЕ</a>
+                    <h1 class="text-white">
+                        {% if request.session.lang == 'uz' %}
+                        ENG DAVOMLI BOLALIK
+                        {% else %}
+                        САМОЕ ДЛИННОЕ ДЕТСТВО
+                        {% endif %}
+                    </h1>
+                    <p class="text-white">
+                        {% if request.session.lang == 'uz' %}
+                        O'yin kulgu va sport uchun 90 metrlik xavfsiz hudud
+                        {% else %}
+                        90 метров безопасного пространства для игр, веселья и спорта
+                        {% endif %}
+                    </p>
+                    <a href="#" class="text-white">
+                        {% if request.session.lang == 'uz' %}
+                        BATAFSIL
+                        {% else %}
+                        УЗНАТЬ БОЛЬШЕ
+                        {% endif %}
+                    </a>
                 </div>
                 <div class="footer">
                     <ul class="list-unstyled m-0">
                         <li class="text-white">
                             <img src="{% static 'img/icons/home.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                O'YINGOHLAR
+                                {% else %}
                                 ИГРОВЫЕ КОМПЛЕКСЫ
+                                {% endif %}
                             </div>
                         </li>
                         <li class="text-white">
                             <img src="{% static 'img/icons/camera.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                XAVFSIZ QOPLAMA
+                                {% else %}
                                 БЕЗОПАСНОЕ ПОКРЫТИЕ 
+                                {% endif %}
                             </div>
                         </li>
                         <li class="text-white">
                             <img src="{% static 'img/icons/soccer-field.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                SPORT MAYDONCHALARI
+                                {% else %}
                                 CПОРТИВНЫЕ ПЛОЩАДКИ
+                                {% endif %}
                             </div>
                         </li>
                         <li class="text-white">
                             <img src="{% static 'img/icons/factoids.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                SPORT MAYDONCHALARI
+                                {% else %}
                                 CПОРТИВНЫЕ ПЛОЩАДКИ
+                                {% endif %}
                             </div>
                         </li>
                     </ul>
@@ -196,46 +314,88 @@
             </section>
             <section class="section comfort comfort-2">
                 <div class="content">
-                    <h1 class="text-white">САМЫЙ ПРОДУМАННЫЙ ДВОР</h1>
-                    <p class="text-white">100 метров освещенной аллеи для неспешных прогулок</p>
-                    <a href="#" class="text-white">УЗНАТЬ БОЛЬШЕ</a>
+                    <h1 class="text-white">
+                        {% if request.session.lang == 'uz' %}
+                        ENG MUKAMMAL O'YLANGAN HOVLI
+                        {% else %}
+                        САМЫЙ ПРОДУМАННЫЙ ДВОР
+                        {% endif %}
+                    </h1>
+                    <p class="text-white">
+                        {% if request.session.lang == 'uz' %}
+                        Sayr uchun 100 metr yoritilgan xiyobon
+                        {% else %}
+                        100 метров освещенной аллеи для неспешных прогулок
+                        {% endif %}
+                    </p>
+                    <a href="#" class="text-white">
+                        {% if request.session.lang == 'uz' %}
+                        BATAFSIL
+                        {% else %}
+                        УЗНАТЬ БОЛЬШЕ
+                        {% endif %}
+                    </a>
                 </div>
                 <div class="footer">
                     <ul class="list-unstyled m-0">
                         <li class="text-white">
                             <img src="{% static 'img/icons/road-barrier.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                YOPIQ HUDUD
+                                {% else %}
                                 ЗАКРЫТАЯ ТЕРРИТОРИЯ
+                                {% endif %}
                             </div>
                         </li>
                         <li class="text-white">
                             <img src="{% static 'img/icons/wifi.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                BEPUL INTERNET
+                                {% else %}
                                 БЕСПЛАТНЫЙ ИНТЕРНЕТ
+                                {% endif %}
                             </div>
                         </li>
                         <li class="text-white">
                             <img src="{% static 'img/icons/besedka.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                DAM OLISH O'RINDIQLARI
+                                {% else %}
                                 БЕСЕДКИ ДЛЯ ОТДЫХА
+                                {% endif %}
                             </div>
                         </li>
                         <li class="text-white">
                             <img src="{% static 'img/icons/camera-alt.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                QO'RIQLANADIGAN AVTOTURARGOHLAR
+                                {% else %}
                                 ОХРАНЯЕМАЯ ПАРКОВКА
+                                {% endif %}
                             </div>
                         </li>
                         <li class="text-white">
                             <img src="{% static 'img/icons/fitness.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                YOPIQ TRENAJORLAR
+                                {% else %}
                                 КРЫТЫЕ ТРЕНАЖЕРЫ
+                                {% endif %}
                             </div>
                         </li>
                         <li class="text-white">
                             <img src="{% static 'img/icons/barbeque.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                BARBEKYU HUDUDLARI
+                                {% else %}
                                 БАРБЕКЮ-ЗОНЫ
+                                {% endif %}
                             </div>
                         </li>
                     </ul>
@@ -243,34 +403,68 @@
             </section>
             <section class="section comfort comfort-3">
                 <div class="content">
-                    <h1 class="text-white">ПОЕХАЛИ В МАГАЗИН?</h1>
-                    <p class="text-white">3 бесшумных лифта в каждой секции — прямо к магазинам в цокольных этажах</p>
-                    <a href="#" class="text-white">УЗНАТЬ БОЛЬШЕ</a>
+                    <h1 class="text-white">
+                        {% if request.session.lang == 'uz' %}
+                        MAGAZINGA KETTIKMI?
+                        {% else %}
+                        ПОЕХАЛИ В МАГАЗИН?
+                        {% endif %}
+                    </h1>
+                    <p class="text-white">
+                        {% if request.session.lang == 'uz' %}
+                        ENG DAVOMLI BOLALIK
+                        {% else %}
+                        Har bir bo'limda eng past qavatdagi magazinlarga olib boruvchi 3 ta shovqinsiz liftlar
+                        {% endif %}
+                    </p>
+                    <a href="#" class="text-white">
+                        {% if request.session.lang == 'uz' %}
+                        BATAFSIL
+                        {% else %}
+                        УЗНАТЬ БОЛЬШЕ
+                        {% endif %}
+                    </a>
                 </div>
                 <div class="footer">
                     <ul class="list-unstyled m-0">
                         <li class="text-white">
                             <img src="{% static 'img/icons/wheel.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                G'ILDIRAKLI PANDUSLAR
+                                {% else %}
                                 КОЛЯСОЧНЫЕ ПАНДУСЫ
+                                {% endif %}
                             </div>
                         </li>
                         <li class="text-white">
                             <img src="{% static 'img/icons/door-handle.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                ORT ESHIKLI PODYEZDLAR
+                                {% else %}
                                 СКВОЗНЫЕ ПОДЪЕЗДЫ
+                                {% endif %}
                             </div>
                         </li>
                         <li class="text-white">
                             <img src="{% static 'img/icons/cart.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                MAGAZIN VA KAFELAR
+                                {% else %}
                                 МАГАЗИНЫ И КАФЕ
+                                {% endif %}
                             </div>
                         </li>
                         <li class="text-white">
                             <img src="{% static 'img/icons/home-alt.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                SAVDO KO'RGAZMALARI
+                                {% else %}
                                 ТОРГОВАЯ ГАЛЕРЕЯ
+                                {% endif %}
                             </div>
                         </li>
                     </ul>
@@ -278,34 +472,68 @@
             </section>
             <section class="section comfort comfort-4">
                 <div class="content">
-                    <h1 class="text-white">CАМЫЙ КОМФОРТНЫЙ ДОМ</h1>
-                    <p class="text-white">Квартиры с предчистовой отделкой и разведенной электропроводкой - вам остается только выбрать дизайн и перевезти мебель</p>
-                    <a href="#" class="text-white">УЗНАТЬ БОЛЬШЕ</a>
+                    <h1 class="text-white">
+                        {% if request.session.lang == 'uz' %}
+                        ENG QULAY UY
+                        {% else %}
+                        CАМЫЙ КОМФОРТНЫЙ ДОМ
+                        {% endif %}
+                    </h1>
+                    <p class="text-white">
+                        {% if request.session.lang == 'uz' %}
+                        Oldindan tugallangan otdelka va ulangan elektr simlari sizga faqat!
+                        {% else %}
+                        Квартиры с предчистовой отделкой и разведенной электропроводкой - вам остается только выбрать дизайн и перевезти мебель
+                        {% endif %}
+                    </p>
+                    <a href="#" class="text-white">
+                        {% if request.session.lang == 'uz' %}
+                        BATAFSIL
+                        {% else %}
+                        УЗНАТЬ БОЛЬШЕ
+                        {% endif %}
+                    </a>
                 </div>
                 <div class="footer">
                     <ul class="list-unstyled m-0">
                         <li class="text-white">
                             <img src="{% static 'img/icons/window.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                PANORAMALI SHISHA QOPLAMA
+                                {% else %}
                                 ПАНОРАМНОЕ ОСТЕКЛЕНИЕ
+                                {% endif %}
                             </div>
                         </li>
                         <li class="text-white">
                             <img src="{% static 'img/icons/glass-door.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                PO'LAT KIRISH ESHIKLARI
+                                {% else %}
                                 СТАЛЬНЫЕ ВХОДНЫЕ ДВЕРИ
+                                {% endif %}
                             </div>
                         </li>
                         <li class="text-white">
                             <img src="{% static 'img/icons/loggy.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                OYNALI BILAN QOPLANGAN TURAR JOYLAR
+                                {% else %}
                                 ЗАСТЕКЛЕННЫЕ ЛОДЖИИ
+                                {% endif %}
                             </div>
                         </li>
                         <li class="text-white">
                             <img src="{% static 'img/icons/brick.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                MONOLIT - G'ISHT
+                                {% else %}
                                 МОНОЛИТ- КИРПИЧ
+                                {% endif %}
                             </div>
                         </li>
                     </ul>
@@ -318,43 +546,127 @@
                 <div class="row m-0 h-100">
                     <div class="map-sidebar">
                         <div class="inner h-100">
-                            <h4>САМАЯ УДОБНАЯ РАЗВЯЗКА В ГОРОДЕ</h4>
-                            <p style="color:rgb(79, 79, 79);">Всё для жизни в 15 минутах от дома</p>
+                            <h4>
+                                {% if request.session.lang == 'uz' %}
+                                SHAHARDAGI ENG QULAY JOYLASHUV
+                                {% else %}
+                                САМАЯ УДОБНАЯ РАЗВЯЗКА В ГОРОДЕ
+                                {% endif %}
+                            </h4>
+                            <p style="color:rgb(79, 79, 79);">
+                                {% if request.session.lang == 'uz' %}
+                                Barchasi uydan atigi 15 minutlik masofa
+                                {% else %}
+                                Всё для жизни в 15 минутах от дома
+                                {% endif %}
+                            </p>
                             <div>
                                 <ul class="filter-controls list-unstyled" id="filterControls"
                                 data-oqsaroyPmark={% static '/img/oqsaroy_placemark.png' %} data-urbanPmark={% static '/img/urban_pmark.png' %}
                                 data-shopPmark={% static '/img/shop_pmark.png' %} data-restaurantPmark={% static '/img/restaurant_pmark.png' %}
                                 data-busstopPmark={% static '/img/busstop_pmark.png' %} data-hospitalPmark={% static '/img/hospital_pmark.png' %}>
                                     <li class="filter-item filter-all">
-                                        <span>Все объекты</span>
+                                        <span>
+                                            {% if request.session.lang == 'uz' %}
+                                            Barcha obyektlar
+                                            {% else %}
+                                            Все объекты
+                                            {% endif %}
+                                        </span>
                                     </li>
                                     <li class="filter-item filter-shops">
-                                        <span>Магазины и супермаркеты</span>
+                                        <span>
+                                            {% if request.session.lang == 'uz' %}
+                                            Magazin va supermarketlar
+                                            {% else %}
+                                            Магазины и супермаркеты
+                                            {% endif %} 
+                                        </span>
                                     </li>
                                     <li class="filter-item filter-restaurants">
-                                        <span>Рестораны и кафе</span>
+                                        <span>
+                                            {% if request.session.lang == 'uz' %}
+                                            Restoran va kafelar
+                                            {% else %}
+                                            Рестораны и кафе
+                                            {% endif %}
+                                        </span>
                                     </li>
                                     <li class="filter-item filter-hospitals">
-                                        <span>Больница и поликлиника</span>
+                                        <span>
+                                            {% if request.session.lang == 'uz' %}
+                                            Shifoxona va poliklinikalar
+                                            {% else %}
+                                            Больница и поликлиника
+                                            {% endif %}
+                                        </span>
                                     </li>
                                     <li class="filter-item filter-busstops">
-                                        <span>Остановки</span>
+                                        <span>
+                                            {% if request.session.lang == 'uz' %}
+                                            Bekatlar
+                                            {% else %}
+                                            Остановки
+                                            {% endif %}
+                                        </span>
                                     </li>
                                 </ul>
                             </div>
-                            <h4 class="footer">ПЕШКОМ</h4>
+                            <h4 class="footer">
+                                {% if request.session.lang == 'uz' %}
+                                PIYODA
+                                {% else %}
+                                ПЕШКОМ
+                                {% endif %}
+                            </h4>
                             <ul class="location-distances list-unstyled">
                                 <li class="item">
-                                    <div class="time">10 мин</div>
-                                    <div class="destination">Детская поликлиника</div>
+                                    <div class="time">
+                                        {% if request.session.lang == 'uz' %}
+                                        10 min
+                                        {% else %}
+                                        10 мин
+                                        {% endif %}
+                                    </div>
+                                    <div class="destination">
+                                        {% if request.session.lang == 'uz' %}
+                                        Bolalar poliklinikasi
+                                        {% else %}
+                                        Детская поликлиника
+                                        {% endif %}
+                                    </div>
                                 </li>
                                 <li class="item">
-                                    <div class="time">10 мин</div>
-                                    <div class="destination">Три парка</div>
+                                    <div class="time">
+                                        {% if request.session.lang == 'uz' %}
+                                        10 min
+                                        {% else %}
+                                        10 мин
+                                        {% endif %}
+                                    </div>
+                                    <div class="destination">
+                                        {% if request.session.lang == 'uz' %}
+                                        3 ta xiyobon
+                                        {% else %}
+                                        Три парка
+                                        {% endif %}
+                                    </div>
                                 </li>
                                 <li class="item">
-                                    <div class="time">10 мин</div>
-                                    <div class="destination">Дельфинарий и ледовый дворец</div>
+                                    <div class="time">
+                                        {% if request.session.lang == 'uz' %}
+                                        10 min
+                                        {% else %}
+                                        10 мин
+                                        {% endif %}
+                                    </div>
+                                    <div class="destination">
+                                        {% if request.session.lang == 'uz' %}
+                                        Delfinarium va muz saroyi
+                                        {% else %}
+                                        Дельфинарий и ледовый дворец
+                                        {% endif %}
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -368,12 +680,25 @@
                         <div class="block" style="background: url({% static 'img/advs_1.png' %}) no-repeat; background-size: cover;">
                             <div class="overlay">
                                 <div class="inner">
-                                    <h4 class="header">РАЗНООБРАЗНЫЙ ДОМ</h4>
+                                    <h4 class="header">
+                                        {% if request.session.lang == 'uz' %}
+                                        O'ZGACHA UY
+                                        {% else %}
+                                        РАЗНООБРАЗНЫЙ ДОМ
+                                        {% endif %}
+                                    </h4>
                                     <p class="content">
+                                        {% if request.session.lang == 'uz' %}
+                                        Panorama oynalar
+                                        Panorama oynali uylar zamonaviy, obro'li, chiroyli.
+                                        Bunday oynalar xonani maksimal tabiy yorug'lik bilan taminlaydi, xona hajmini vizual kengaytiradi va bino ko'rinishiga chiroy qo'shadi.
+                                        Ayniqsa klassik uslubdagi oq saroy kompleksida juda ajoyib ko'rinadi.
+                                        {% else %}
                                         Панорамное остекление 
                                         Дома с панорамным остеклением, это модно, престижно, эстетично.
                                         Такое остекление максимально наполняет помещение естественным светом, визуально увеличивает площадь, и выигрышно оформляет фасад здания.
                                         Особенно эффектно смотрится в домах классического стиля ЖК OQ SAROY.
+                                        {% endif %}
                                     </p>
                                 </div>
                             </div>
@@ -383,8 +708,19 @@
                         <div class="block" style="background: url({% static 'img/advs_2.png' %}) no-repeat; background-size: cover;">
                             <div class="overlay">
                                 <div class="inner">
-                                    <h4 class="header">РАЗВИТАЯ ИНФРАСТРУКТУРА</h4>
-                                    <p class="content">Транспортная развязка рядом с домом — более 20 маршрутов по всем направлениям.
+                                    <h4 class="header">
+                                        {% if request.session.lang == 'uz' %}
+                                        RIVOJLANGAN INFRATUZULMA
+                                        {% else %}
+                                        РАЗВИТАЯ ИНФРАСТРУКТУРА
+                                        {% endif %}
+                                    </h4>
+                                    <p class="content">
+                                        {% if request.session.lang == 'uz' %}
+                                        Uy yaqinida transport chorrahasi - 20 dan ortiq yo'nalishga marshrut
+                                        {% else %}
+                                        Транспортная развязка рядом с домом — более 20 маршрутов по всем направлениям.
+                                        {% endif %}
                                     </p>
                                 </div>
                             </div>
@@ -394,9 +730,21 @@
                         <div class="block" style="background: url({% static 'img/advs_3.png' %}) no-repeat; background-size: cover;">
                             <div class="overlay">
                                 <div class="inner">
-                                    <h4 class="header">ПРИДОМОВАЯ ТЕРРИТОРИЯ<</h4>
-                                    <p class="content">Безопасный двор площадью 3000 м2 c эксклюзивной детской площадкой, беседками, 
+                                    <h4 class="header">
+                                        {% if request.session.lang == 'uz' %}
+                                        UY OLDI HUDUD
+                                        {% else %}
+                                        ПРИДОМОВАЯ ТЕРРИТОРИЯ
+                                        {% endif %}
+                                    </h4>
+                                    <p class="content">
+                                        {% if request.session.lang == 'uz' %}
+                                        3000 m<sup>2</sup> hovli maydonida bolalar o'yingohi, dam olish uchun o'rindiqlar, favvoralar, doimiy yoritiladigan 
+                                        ko'chalar mavjud. Shuningdek turar joyning 1-qavatida magazinlar, restoran va fastfudlar mavjud
+                                        {% else %}
+                                        Безопасный двор площадью 3000 м<sup>2</sup> c эксклюзивной детской площадкой, беседками, 
                                         фонтанами, освещением в любое время суток, а также магазины, ресторан и фаст-фуд, расположенные на первых этажах комплекса.
+                                        {% endif %}
                                     </p>
                                 </div>
                             </div>
@@ -406,9 +754,22 @@
                         <div class="block" style="background: url({% static 'img/advs_4.png' %}) no-repeat; background-size: cover;">
                             <div class="overlay">
                                 <div class="inner">
-                                    <h4 class="header">ПЕРСПЕКТИВНЫЙ РАЙОН</h4>
-                                    <p class="content">Около дома четыре школы, частные и государственные детские сады, больница, Паркентский рынок, 
-                                        SPA-салоны, салоны красоты. В десяти минутах пешком - детская поликлиника. У дома транспортная развязка с маршрутами во все концы города.
+                                    <h4 class="header">
+                                        {% if request.session.lang == 'uz' %}
+                                        ISTIQBOLLI TUMAN
+                                        {% else %}
+                                        ПЕРСПЕКТИВНЫЙ РАЙОН
+                                        {% endif %}
+                                    </h4>
+                                    <p class="content">
+                                        {% if request.session.lang == 'uz' %}
+                                        Uy yaqinida 4 ta maktab, xususiy va davlat bog'chalari, shifoxonalar, Parkent bozori, SPA - salonlari, 
+                                        go'zallik salonlari. 10 daqiqa piyoda yurib bolalar poliklinikasiga borish mumkin. Uy yaqinida shaharning 
+                                        har burchagiga marshrutlar mavjud.
+                                        {% else %}
+                                        Около дома четыре школы, частные и государственные детские сады, больница, Паркентский рынок, 
+                                        SPA-салоны, салоны красоты. В десяти минутах пешком - детская поликлиника. У дома транспортная развязка с маршрутами во все концы города.    
+                                        {% endif %}
                                     </p>
                                 </div>
                             </div>
@@ -418,9 +779,21 @@
                         <div class="block" style="background: url({% static 'img/advs_5.png' %}) no-repeat; background-size: cover;">
                             <div class="overlay">
                                 <div class="inner">
-                                    <h4 class="header">СОВРЕМЕННЫЕ ДИЗАЙН-ПРОЕКТЫ</h4>
-                                    <p class="content">Уникальный дизайн интерьера и планировки для вашего типа семьи - выбирайте то, что удобно вам: 
-                                        все квартиры оборудованы двухконтурнимы котеламы. 
+                                    <h4 class="header">
+                                        {% if request.session.lang == 'uz' %}
+                                        Zamonaviy dizaynli proyektlar
+                                        {% else %}
+                                        СОВРЕМЕННЫЕ ДИЗАЙН-ПРОЕКТЫ
+                                        {% endif %}
+                                    </h4>
+                                    <p class="content">
+                                        {% if request.session.lang == 'uz' %}
+                                        Sizning oilangiz uchun noyob interyer va qurulish dizayni - o'zingizga qulayini tanlang: barcha 
+                                        xonadonlar ikki konturlik isitish tizimi bilan jihozlangan
+                                        {% else %}
+                                        Уникальный дизайн интерьера и планировки для вашего типа семьи - выбирайте то, что удобно вам: 
+                                        все квартиры оборудованы двухконтурнимы котеламы.                                         
+                                        {% endif %}
                                     </p>
                                 </div>
                             </div>
@@ -430,9 +803,21 @@
                         <div class="block" style="background: url({% static 'img/advs_6.png' %}) no-repeat; background-size: cover;">
                             <div class="overlay">
                                 <div class="inner">
-                                    <h4 class="header">ШОППИНГ НА СВОЕЙ ТЕРРИТОРИИ</h4>
-                                    <p class="content">Магазины, услуги и развлечения прямо на территории вашего дома. Обязательно 
+                                    <h4 class="header">
+                                        {% if request.session.lang == 'uz' %}
+                                        O'Z HUDUDINGIZDA SHOPPING
+                                        {% else %}
+                                        ШОППИНГ НА СВОЕЙ ТЕРРИТОРИИ
+                                        {% endif %}
+                                    </h4>
+                                    <p class="content">
+                                        {% if request.session.lang == 'uz' %}
+                                        To'g'ri sizning uyingiz hududida magazin, hizmat ko'rsatish shaxobchalari va 
+                                        ko'ngil ochar manzillar. Albatta qo'shnilaringiznikiga mehmonga restoranga kiring
+                                        {% else %}
+                                        Магазины, услуги и развлечения прямо на территории вашего дома. Обязательно 
                                         зайдите в гости к соседям — в ресторан
+                                        {% endif %}
                                     </p>
                                 </div>
                             </div>
@@ -442,27 +827,51 @@
             </section>
             <section class="section section-commerce" style="height: 100vh;" id="commerce">
                 <div class="content">
-                    <h1 class="text-white">КВАРТИРА ДЛЯ ВСЕЙ СЕМЬИ</h1>
-                    <a href="#" class="text-white mt-1">УЗНАТЬ БОЛЬШЕ</a>
+                    <h1 class="text-white">
+                        {% if request.session.lang == 'uz' %}
+                        BARCHA OILA UCHUN XONADON
+                        {% else %}
+                        КВАРТИРА ДЛЯ ВСЕЙ СЕМЬИ
+                        {% endif %}
+                    </h1>
+                    <a href="#" class="text-white mt-1">
+                        {% if request.session.lang == 'uz' %}
+                        BATAFSIL
+                        {% else %}
+                        УЗНАТЬ БОЛЬШЕ
+                        {% endif %}
+                    </a>
                 </div>
                 <div class="footer">
                     <ul class="list-unstyled m-0">
                         <li class="text-white">
                             <img src="{% static 'img/icons/icon.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                57 DAN 263 GACHA BO'LGAN MAYDONLAR
+                                {% else %}
                                 ПЛОЩАДЫ ОТ 57 ДО 263
+                                {% endif %}
                             </div>
                         </li>
                         <li class="text-white">
                             <img src="{% static 'img/icons/family.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                HAR QANDAY OILA UCHUN
+                                {% else %}
                                 ПОДХОДЯТ ДЛЯ ЛЮБЫХ СЕМЕЙ
+                                {% endif %}
                             </div>
                         </li>
                         <li class="text-white">
                             <img src="{% static 'img/icons/doors.png' %}" alt="">
                             <div class="subtitle ml-3">
+                                {% if request.session.lang == 'uz' %}
+                                ZAMONAVIY PODYEZD
+                                {% else %}
                                 СОВРЕМЕННЫЙ ПОДЪЕЗД
+                                {% endif %}
                             </div>
                         </li>
                     </ul>
@@ -470,50 +879,108 @@
             </section>
             <section class="section section-progress" id="progress">
                 <div class="content">
-                    <h1 class="text-white">ЭТАПЫ СТРОИТЕЛЬСТВА</h1>
-                    <a href="#" class="text-white mt-1">УЗНАТЬ БОЛЬШЕ</a>
+                    <h1 class="text-white">
+                        {% if request.session.lang == 'uz' %}
+                        QURILISH ETAPLARI
+                        {% else %}
+                        ЭТАПЫ СТРОИТЕЛЬСТВА
+                        {% endif %}
+                    </h1>
+                    <a href="#" class="text-white mt-1">
+                        {% if request.session.lang == 'uz' %}
+                        BATAFSIL
+                        {% else %}
+                        УЗНАТЬ БОЛЬШЕ
+                        {% endif %}
+                    </a>
                 </div>
             </section>
-            <section class="section section-about">
+            <section class="section section-about" id="about">
                 <div class="inner">
                     <div class="block-logo">
                         <img src="{% static 'img/icons/urban_logo.png' %}" alt="Urban Stroy">
                     </div>
-                    <h2>О КОМПАНИИ URBAN STROY</h2>
+                    <h2>
+                        {% if request.session.lang == 'uz' %}
+                        URBANSTROY KOMPANIYASI HAQIDA
+                        {% else %}
+                        О КОМПАНИИ URBAN STROY
+                        {% endif %}
+                    </h2>
                     <div class="content">
                         <p>
-                            Urban Story - является динамично развивающейся строительной компанией с большим 
+                            {% if request.session.lang == 'uz' %}
+                            Urbanstroy - turar joy qurulishi sohasidagi katta tajribaga ega bo'lgan, 
+                            jadal rivojlanayotgan qurulish kompaniyasidir.
+                            {% else %}
+                            Urbanstroy - является динамично развивающейся строительной компанией с большим 
                             опытом работы в сфере жилищного строительства.
+                            {% endif %}
                         </p>
                         <p>
+                            {% if request.session.lang == 'uz' %}
+                            Kompaniya keng qamrovli turar joy qurulishlarini olib boradi: premium va biznes-klassdan 
+                            tortib, qulay uylargacha.
+                            {% else %}
                             Компания реализует широкий спектр проектов жилищного строительства различных типов и классов: 
                             от эксклюзивных объектов премиум и бизнес-класса до комфортного жилья.
+                            {% endif %}
                         </p>
                     </div>
                     <div class="statistics">
                         <div class="row m-0">
                             <div class="col-md-3 col-sm-6 element">
                                 <div class="text-center">
-                                    <p class="stat">+11 000 м<sup>2</sup></p>
-                                    <p class="subtitle">Введено в эксплуатацию</p>
+                                    <p class="stat">
+                                        {% if request.session.lang == 'uz' %}
+                                        +11 000 m<sup>2</sup>
+                                        {% else %}
+                                        +11 000 м<sup>2</sup>
+                                        {% endif %}
+                                    </p>
+                                    <p class="subtitle">
+                                        {% if request.session.lang == 'uz' %}
+                                        Foydalanishga topshirilgan
+                                        {% else %}
+                                        Введено в эксплуатацию
+                                        {% endif %}
+                                    </p>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-6 element">
                                 <div class="text-center">
                                     <p class="stat">300+</p>
-                                    <p class="subtitle">Счастливые Семьи</p>
+                                    <p class="subtitle">
+                                        {% if request.session.lang == 'uz' %}
+                                        Baxtli oilalar
+                                        {% else %}
+                                        Счастливые Семьи
+                                        {% endif %}
+                                    </p>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-6 element">
                                 <div class="text-center">
                                     <p class="stat">2</p>
-                                    <p class="subtitle">Жилых Комплекса</p>
+                                    <p class="subtitle">
+                                        {% if request.session.lang == 'uz' %}
+                                        Turar joy
+                                        {% else %}
+                                        Жилых Комплекса
+                                        {% endif %}
+                                    </p>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-6 element">
                                 <div class="text-center">
                                     <p class="stat">2</p>
-                                    <p class="subtitle">Парковки</p>
+                                    <p class="subtitle">
+                                        {% if request.session.lang == 'uz' %}
+                                        Avto turargohlar
+                                        {% else %}
+                                        Парковки
+                                        {% endif %}
+                                    </p>
                                 </div>
                             </div>
                         </div>

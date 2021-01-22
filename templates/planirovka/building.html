@@ -41,17 +41,35 @@
 					<button class="ctrl" id="floorDown">-</button>
 					<div class="indicator">
 						<span class="b-floor-indicator" id="bFloorLvlIndicator" data-value="0">-</span>
-						<span class="subtitle">Qavat</span>
+						<span class="subtitle">
+							{% if request.session.lang == 'uz' %}
+							Qavat
+                            {% else %}
+                            Этаж
+                            {% endif %}
+						</span>
 					</div>
 					<button class="ctrl" id="floorUp">+</button>
 				</div>
 				<div class="apartment-indicator-block text-center">
 					<div class="indicator">
 						<span class="aval-apartments-indicator mt-auto" id="apartmentsAvailable">-</span>
-						<span class="subtitle">Xonadon sotuvda</span>
+						<span class="subtitle">
+							{% if request.session.lang == 'uz' %}
+							Xonadon sotuvda
+                            {% else %}
+                            Продаётся
+                            {% endif %}
+						</span>
 					</div>
 				</div>
-				<button class="disabled" id="exploreFloor">Qavatni ko'rmoq</button>
+				<button class="disabled" id="exploreFloor">
+					{% if request.session.lang == 'uz' %}
+					Qavatni ko'rmoq
+					{% else %}
+					Видеть этаж
+					{% endif %}
+				</button>
 			</div>
 		</div>
 		<div class="map-alt">
