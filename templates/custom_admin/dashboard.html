@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Oqsaroy Dashboard{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/admin-styles.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <form action="{% url 'logout' %}" method="post" id="logoutForm">
+            {% csrf_token %}
+        </form>
+        <a href="javascript:{document.getElementById('logoutForm').submit()}" class="btn logout-btn"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Log out</a>
+        <div class="inner position-relative h-100">
+            <div class="row">
+                {% if buildings %}
+                {% for building in buildings %}
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Block {{building.building_label}}</h5>
+                            <p class="card-text">
+                                <form>
+                                    <div class="form-group">
+                                        <label class="mr-1" for="availCheck">Available</label>
+                                        <input type="checkbox" name="available" class="check-control"
+                                        data-csrf="{{csrf_token}}" 
+                                        data-type="building"
+                                        data-buildingLabel="{{building.building_label}}"
+                                        data-url="{% url 'update' %}"
+                                        {% if building.available %}
+                                        checked
+                                        {% endif %}
+                                        >
+                                    </div>
+                                </form>
+                                <a class="card-link btn btn-primary" href="{% url 'dashboard_building' building.building_label %}">Go to floors</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% if floors %}
+                {% for floor in floors %}
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Floor {{floor.floor_number}}</h5>
+                            <p class="card-text">
+                                <form>
+                                    <div class="form-group">
+                                        <label class="mr-1" for="availCheck">Available</label>
+                                        <input type="checkbox" name="available" class="check-control" 
+                                        data-csrf="{{csrf_token}}" 
+                                        data-type="floor"
+                                        data-buildingLabel="{{building_label}}"
+                                        data-floorNumber="{{floor.floor_number}}"
+                                        data-url="{% url 'update' %}"
+                                        {% if floor.available %}
+                                        checked
+                                        {% endif %}
+                                        >
+                                    </div>
+                                </form>
+                                <a class="card-link btn btn-primary" href="{% url 'dashboard_floor' building_label floor.floor_number %}">Go to apartments</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% if apartments %}
+                {% for apartment in apartments %}
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Apartment {{apartment.apartment_number}}</h5>
+                            <p class="card-text">
+                                <form>
+                                    <div class="form-group">
+                                        <label class="mr-1" for="availCheck">Available</label>
+                                        <input type="checkbox" name="available" class="check-control" 
+                                        data-csrf="{{csrf_token}}"
+                                        data-type="apartment"
+                                        data-buildingLabel="{{building_label}}"
+                                        data-floorNumber="{{floor_number}}"
+                                        data-apartmentNumber="{{apartment.apartment_number}}"
+                                        data-url="{% url 'update' %}"
+                                        {% if apartment.available %}
+                                        checked
+                                        {% endif %}
+                                        >
+                                    </div>
+                                </form>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'js/admin-script.js' %}"></script>
+{% endblock %}

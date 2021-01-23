@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Oqsaroy Admin{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/admin-styles.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="inner position-relative h-100" style="backdrop-filter:blur(5px);">
+        <div class="login-form">
+            <div class="title">Please log in</div>
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="username" placeholder="Username">
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                </div>
+                <input type="submit" class="btn btn-primary font-weight-bold" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+<script src="/js/admin-script.js"></script>
+{% endblock %}

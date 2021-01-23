@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'index.apps.IndexConfig',
-    'planirovka.apps.PlanirovkaConfig'
+    'planirovka.apps.PlanirovkaConfig',
+    'custom_admin.apps.CustomAdminConfig'
 ]
 
 MIDDLEWARE = [
