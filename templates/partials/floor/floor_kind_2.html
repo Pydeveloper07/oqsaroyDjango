@@ -15,10 +15,18 @@ style="enable-background:new 0 0 594.6 306;" xml:space="preserve">
     </metadata>
     <image style="overflow:visible;" width="991" height="510" xlink:href="{% static 'img/floors/A,K-8.png' %}"  transform="matrix(0.6 0 0 0.6 0 0)">
     </image>
-    <polygon class="st0" data-room="1" data-rooms="2" data-totArea="68,1" data-totAreaRooms="65,9" data-url="apartment.html" points="22.2,163.1 22.2,40.6 74.5,40.6 74.5,19.6 112.8,19.6 112.8,164.4 "/>
-    <polygon class="st0" data-room="1" data-rooms="2" data-totArea="68,1" data-totAreaRooms="65,9" data-url="apartment.html" points="22.2,266 22.2,170.5 121,169.3 121,125.1 193.3,125.1 193.3,242.3 112.8,242.5 112.8,266 "/>
-    <polygon class="st0" data-room="1" data-rooms="2" data-totArea="68,1" data-totAreaRooms="65,9" data-url="apartment.html" points="201.9,234.1 201.4,19.6 239.2,19.6 239.2,41.1 292.1,40.8 292.1,234.1 "/>
-    <polygon class="st0" data-room="1" data-rooms="2" data-totArea="68,1" data-totAreaRooms="65,9" data-url="apartment.html" points="300.5,234.1 300.2,40.3 352.8,40.3 352.8,19.6 391.4,19.6 391.4,234.1 "/>
-    <polygon class="st0" data-room="1" data-rooms="2" data-totArea="68,1" data-totAreaRooms="65,9" data-url="apartment.html" points="399.3,242.5 399.3,124.3 471,124.3 471,170.5 522.6,170.3 522.6,266.3 479.2,266.3 479.2,242 "/>
-    <polygon class="st0" data-room="1" data-rooms="2" data-totArea="68,1" data-totAreaRooms="65,9" data-url="apartment.html" points="479.5,164.7 479.5,19.6 518.3,19.6 518.3,40.3 570.4,40.3 570.4,266.3 528.2,266.3 528,164.1 "/>
+    {% if rooms %}
+    <polygon {% if rooms.0.available %}class="st0"{% else %}class="st0 unavailable"{% endif %} data-room="{{rooms.0.apartment_number}}" data-rooms="{{rooms.0.number_of_rooms}}" data-totArea="{{rooms.0.tot_area}}" data-totAreaRooms="{{rooms.0.tot_area_rooms}}" 
+        data-url="{% url 'room' building_label=building_label floor=floor.floor_number room=rooms.0.apartment_number %}" points="22.2,163.1 22.2,40.6 74.5,40.6 74.5,19.6 112.8,19.6 112.8,164.4 "/>
+    <polygon {% if rooms.1.available %}class="st0"{% else %}class="st0 unavailable"{% endif %} data-room="{{rooms.1.apartment_number}}" data-rooms="{{rooms.1.number_of_rooms}}" data-totArea="{{rooms.1.tot_area}}" data-totAreaRooms="{{rooms.1.tot_area_rooms}}" 
+        data-url="{% url 'room' building_label=building_label floor=floor.floor_number room=rooms.1.apartment_number %}" points="22.2,266 22.2,170.5 121,169.3 121,125.1 193.3,125.1 193.3,242.3 112.8,242.5 112.8,266 "/>
+    <polygon {% if rooms.2.available %}class="st0"{% else %}class="st0 unavailable"{% endif %} data-room="{{rooms.2.apartment_number}}" data-rooms="{{rooms.2.number_of_rooms}}" data-totArea="{{rooms.2.tot_area}}" data-totAreaRooms="{{rooms.2.tot_area_rooms}}" 
+        data-url="{% url 'room' building_label=building_label floor=floor.floor_number room=rooms.2.apartment_number %}" points="201.9,234.1 201.4,19.6 239.2,19.6 239.2,41.1 292.1,40.8 292.1,234.1 "/>
+    <polygon {% if rooms.3.available %}class="st0"{% else %}class="st0 unavailable"{% endif %} data-room="{{rooms.3.apartment_number}}" data-rooms="{{rooms.3.number_of_rooms}}" data-totArea="{{rooms.3.tot_area}}" data-totAreaRooms="{{rooms.3.tot_area_rooms}}" 
+        data-url="{% url 'room' building_label=building_label floor=floor.floor_number room=rooms.3.apartment_number %}" points="300.5,234.1 300.2,40.3 352.8,40.3 352.8,19.6 391.4,19.6 391.4,234.1 "/>
+    <polygon {% if rooms.4.available %}class="st0"{% else %}class="st0 unavailable"{% endif %} data-room="{{rooms.4.apartment_number}}" data-rooms="{{rooms.4.number_of_rooms}}" data-totArea="{{rooms.4.tot_area}}" data-totAreaRooms="{{rooms.4.tot_area_rooms}}" 
+        data-url="{% url 'room' building_label=building_label floor=floor.floor_number room=rooms.4.apartment_number %}" points="399.3,242.5 399.3,124.3 471,124.3 471,170.5 522.6,170.3 522.6,266.3 479.2,266.3 479.2,242 "/>
+    <polygon {% if rooms.5.available %}class="st0"{% else %}class="st0 unavailable"{% endif %} data-room="{{rooms.5.apartment_number}}" data-rooms="{{rooms.5.number_of_rooms}}" data-totArea="{{rooms.5.tot_area}}" data-totAreaRooms="{{rooms.5.tot_area_rooms}}" 
+        data-url="{% url 'room' building_label=building_label floor=floor.floor_number room=rooms.5.apartment_number %}" points="479.5,164.7 479.5,19.6 518.3,19.6 518.3,40.3 570.4,40.3 570.4,266.3 528.2,266.3 528,164.1 "/>
+    {% endif %}
 </svg>

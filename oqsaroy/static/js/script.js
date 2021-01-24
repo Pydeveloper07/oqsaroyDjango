@@ -1,7 +1,7 @@
 $(window).load(function(){
     function preLoader(){
         $('#preloader').fadeOut('slow');
-         $('body').css({
+        $('body').css({
             'overflow': 'scroll'
         });
     }
@@ -9,7 +9,10 @@ $(window).load(function(){
         sessionStorage.setItem('doNotShow', true);
         preLoader();
     } else {
-       $('#preloader').hide();
+        $('#preloader').hide();
+        $('body').css({
+            'overflow': 'scroll'
+        });
     }
 });
 $(document).ready(function () {
