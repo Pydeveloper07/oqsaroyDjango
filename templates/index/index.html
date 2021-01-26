@@ -23,7 +23,7 @@
             </a>
         </div>
         <div class="ml-auto block-contact">
-            <span class="contact"><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;+998 99 999 99 99</span>
+            <span class="contact"><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;+998 97 777 11 66</span>
         </div>
     </nav>
     <div class="sidebar" id="sidebar">
@@ -45,7 +45,7 @@
                         </div>
                         <a class="nav-link active" href="#home">
                             {% if request.session.lang == 'uz' %}
-                            Bosh menyu
+                            Bosh sahifa
                             {% else %}
                             Главная
                             {% endif %}
@@ -73,7 +73,7 @@
                         </div>
                         <a class="nav-link" href="#planirovka">
                             {% if request.session.lang == 'uz' %}
-                            Maket
+                            Joylashuv chizmalari
                             {% else %}
                             Планировки
                             {% endif %}
@@ -101,7 +101,7 @@
                         </div>
                         <a class="nav-link" href="#advantages">
                             {% if request.session.lang == 'uz' %}
-                            Afzalliklari
+                            Afzalliklar
                             {% else %}
                             Преимущества
                             {% endif %}
@@ -115,7 +115,7 @@
                         </div>
                         <a class="nav-link" href="#commerce">
                             {% if request.session.lang == 'uz' %}
-                            Barcha oila uchun xonadon
+                            Butun oila uchun xonadon
                             {% else %}
                             Квартира для всей семьи
                             {% endif %}
@@ -129,7 +129,7 @@
                         </div>
                         <a class="nav-link" href="#progress">
                             {% if request.session.lang == 'uz' %}
-                            Qurulish bosqichlari
+                            Qurulish jarayoni
                             {% else %}
                             Этапы строительства
                             {% endif %}
@@ -171,10 +171,10 @@
                         {% if request.session.lang == 'uz' %}
                         Biz bilan bog'lanish
                         {% else %}
-                        Колл-центр
+                        Связаться с нами
                         {% endif %}
                     </dt>
-                    <dd>+998 99 999 99 99</dd>
+                    <dd>+998 97 777 11 66</dd>
                     <dt>
                         {% if request.session.lang == 'uz' %}
                         Manzil
@@ -184,9 +184,9 @@
                     </dt>
                     <dd>
                         {% if request.session.lang == 'uz' %}
-                        Toshkent shahri, Mirzo-Ulug'bek tumani, Parkent ko'casi
+                        Yashnabod tumani, massiv Parkent, M.Riyoziy, 6/7-uy, 3-xonadon
                         {% else %}
-                        Улица Паркент, Мирзо-Улугбекский район, город Ташкент
+                        Яшнабадский район, массив Паркент, М.Риезий, дом 6/7 квартира-3
                         {% endif %}
                     </dd>
                 </dl>
@@ -211,7 +211,7 @@
                         <img src="{% static 'img/icons/Telegram-Icon.png' %}" alt="">
                         <div class="social-name">
                             <div class="position-relative">
-                                <span>@urban_stroyuz</span>
+                                <span>@urbanstroyuzb</span>
                             </div>
                         </div>
                     </a>
@@ -247,19 +247,19 @@
                 <div class="content">
                     <h1 class="text-white">
                         {% if request.session.lang == 'uz' %}
-                        ENG DAVOMLI BOLALIK
+                        ENG BEG'UBOR BOLALIK
                         {% else %}
                         САМОЕ ДЛИННОЕ ДЕТСТВО
                         {% endif %}
                     </h1>
                     <p class="text-white">
                         {% if request.session.lang == 'uz' %}
-                        O'yin kulgu va sport uchun 90 metrlik xavfsiz hudud
+                        O'yin kulgu uchun xavfsiz hudud
                         {% else %}
-                        90 метров безопасного пространства для игр, веселья и спорта
+                        Безопасное место для игр и развлечений
                         {% endif %}
                     </p>
-                    <a href="#" class="text-white">
+                    <a href="#planirovka" class="text-white">
                         {% if request.session.lang == 'uz' %}
                         BATAFSIL
                         {% else %}
@@ -283,19 +283,9 @@
                             <img src="{% static 'img/icons/camera.png' %}" alt="">
                             <div class="subtitle ml-3">
                                 {% if request.session.lang == 'uz' %}
-                                XAVFSIZ QOPLAMA
+                                XAVFSIZ HUDUD
                                 {% else %}
                                 БЕЗОПАСНОЕ ПОКРЫТИЕ 
-                                {% endif %}
-                            </div>
-                        </li>
-                        <li class="text-white">
-                            <img src="{% static 'img/icons/soccer-field.png' %}" alt="">
-                            <div class="subtitle ml-3">
-                                {% if request.session.lang == 'uz' %}
-                                SPORT MAYDONCHALARI
-                                {% else %}
-                                CПОРТИВНЫЕ ПЛОЩАДКИ
                                 {% endif %}
                             </div>
                         </li>
@@ -316,19 +306,19 @@
                 <div class="content">
                     <h1 class="text-white">
                         {% if request.session.lang == 'uz' %}
-                        ENG MUKAMMAL O'YLANGAN HOVLI
+                        PUHTA O'YLANGAN HOVLI
                         {% else %}
                         САМЫЙ ПРОДУМАННЫЙ ДВОР
                         {% endif %}
                     </h1>
                     <p class="text-white">
                         {% if request.session.lang == 'uz' %}
-                        Sayr uchun 100 metr yoritilgan xiyobon
+                        Hotirjam sayr uchun yorqin xiyobonlar
                         {% else %}
-                        100 метров освещенной аллеи для неспешных прогулок
+                        Освещенные аллеи для неспешных прогулок
                         {% endif %}
                     </p>
-                    <a href="#" class="text-white">
+                    <a href="#planirovka" class="text-white">
                         {% if request.session.lang == 'uz' %}
                         BATAFSIL
                         {% else %}
@@ -352,9 +342,9 @@
                             <img src="{% static 'img/icons/wifi.png' %}" alt="">
                             <div class="subtitle ml-3">
                                 {% if request.session.lang == 'uz' %}
-                                BEPUL INTERNET
+                                INTERNET
                                 {% else %}
-                                БЕСПЛАТНЫЙ ИНТЕРНЕТ
+                                ИНТЕРНЕТ
                                 {% endif %}
                             </div>
                         </li>
@@ -362,7 +352,7 @@
                             <img src="{% static 'img/icons/besedka.png' %}" alt="">
                             <div class="subtitle ml-3">
                                 {% if request.session.lang == 'uz' %}
-                                DAM OLISH O'RINDIQLARI
+                                HORDIQ CHIQARISH UCHUN SHIYPONCHALAR
                                 {% else %}
                                 БЕСЕДКИ ДЛЯ ОТДЫХА
                                 {% endif %}
@@ -378,26 +368,6 @@
                                 {% endif %}
                             </div>
                         </li>
-                        <li class="text-white">
-                            <img src="{% static 'img/icons/fitness.png' %}" alt="">
-                            <div class="subtitle ml-3">
-                                {% if request.session.lang == 'uz' %}
-                                YOPIQ TRENAJORLAR
-                                {% else %}
-                                КРЫТЫЕ ТРЕНАЖЕРЫ
-                                {% endif %}
-                            </div>
-                        </li>
-                        <li class="text-white">
-                            <img src="{% static 'img/icons/barbeque.png' %}" alt="">
-                            <div class="subtitle ml-3">
-                                {% if request.session.lang == 'uz' %}
-                                BARBEKYU HUDUDLARI
-                                {% else %}
-                                БАРБЕКЮ-ЗОНЫ
-                                {% endif %}
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </section>
@@ -405,19 +375,19 @@
                 <div class="content">
                     <h1 class="text-white">
                         {% if request.session.lang == 'uz' %}
-                        MAGAZINGA KETTIKMI?
+                        BLT LIFTLARI
                         {% else %}
-                        ПОЕХАЛИ В МАГАЗИН?
+                        ЛИФТЫ BLT
                         {% endif %}
                     </h1>
                     <p class="text-white">
                         {% if request.session.lang == 'uz' %}
-                        ENG DAVOMLI BOLALIK
+                        Italiya va Xitoyning qo'shma hamkorlikda ishlab chiqarishi va yig'ishi tufayli bizning liftlarimiz ishonchliligi, sifati va ishlashi bo'yicha xalqaro standartlarga javob beradi.
                         {% else %}
-                        Har bir bo'limda eng past qavatdagi magazinlarga olib boruvchi 3 ta shovqinsiz liftlar
+                        Благодаря совместному производству и сборке Италии и Китая, наши лифты будут отвечать мировым стандартам касательно надежности, качества и исполнения.
                         {% endif %}
                     </p>
-                    <a href="#" class="text-white">
+                    <a href="#planirovka" class="text-white">
                         {% if request.session.lang == 'uz' %}
                         BATAFSIL
                         {% else %}
@@ -431,9 +401,9 @@
                             <img src="{% static 'img/icons/wheel.png' %}" alt="">
                             <div class="subtitle ml-3">
                                 {% if request.session.lang == 'uz' %}
-                                G'ILDIRAKLI PANDUSLAR
+                                BINO MAYDONINI TEJASH
                                 {% else %}
-                                КОЛЯСОЧНЫЕ ПАНДУСЫ
+                                ЭКОНОМИЯ ПРОСТРАНСТВА ЗДАНИЯ
                                 {% endif %}
                             </div>
                         </li>
@@ -441,9 +411,9 @@
                             <img src="{% static 'img/icons/door-handle.png' %}" alt="">
                             <div class="subtitle ml-3">
                                 {% if request.session.lang == 'uz' %}
-                                ORT ESHIKLI PODYEZDLAR
+                                EKOLOGIK TOZA
                                 {% else %}
-                                СКВОЗНЫЕ ПОДЪЕЗДЫ
+                                ЭКОЛОГИЧЕСКИ БЕЗОПАСНЫЙ
                                 {% endif %}
                             </div>
                         </li>
@@ -461,9 +431,9 @@
                             <img src="{% static 'img/icons/home-alt.png' %}" alt="">
                             <div class="subtitle ml-3">
                                 {% if request.session.lang == 'uz' %}
-                                SAVDO KO'RGAZMALARI
+                                LIFTNI BOSHQARISH TIZIMI
                                 {% else %}
-                                ТОРГОВАЯ ГАЛЕРЕЯ
+                                СИСТЕМА УПРАВЛЕНИЯ ЛИФТОМ
                                 {% endif %}
                             </div>
                         </li>
@@ -481,12 +451,12 @@
                     </h1>
                     <p class="text-white">
                         {% if request.session.lang == 'uz' %}
-                        Oldindan tugallangan otdelka va ulangan elektr simlari sizga faqat!
+                        Toshkentning rivojlanayotgan tumanlaridan biri sanalgan - Mirzo Ulug'bekda joylashganligi.
                         {% else %}
-                        Квартиры с предчистовой отделкой и разведенной электропроводкой - вам остается только выбрать дизайн и перевезти мебель
+                        Удачное расположение в одном из развивающемся районе Ташкента - Мирзо Улугбек.
                         {% endif %}
                     </p>
-                    <a href="#" class="text-white">
+                    <a href="#planirovka" class="text-white">
                         {% if request.session.lang == 'uz' %}
                         BATAFSIL
                         {% else %}
@@ -500,7 +470,7 @@
                             <img src="{% static 'img/icons/window.png' %}" alt="">
                             <div class="subtitle ml-3">
                                 {% if request.session.lang == 'uz' %}
-                                PANORAMALI SHISHA QOPLAMA
+                                PANORAMALI SHISHA
                                 {% else %}
                                 ПАНОРАМНОЕ ОСТЕКЛЕНИЕ
                                 {% endif %}
@@ -510,7 +480,7 @@
                             <img src="{% static 'img/icons/glass-door.png' %}" alt="">
                             <div class="subtitle ml-3">
                                 {% if request.session.lang == 'uz' %}
-                                PO'LAT KIRISH ESHIKLARI
+                                TEMIR KIRISH ESHIKLARI
                                 {% else %}
                                 СТАЛЬНЫЕ ВХОДНЫЕ ДВЕРИ
                                 {% endif %}
@@ -520,9 +490,9 @@
                             <img src="{% static 'img/icons/loggy.png' %}" alt="">
                             <div class="subtitle ml-3">
                                 {% if request.session.lang == 'uz' %}
-                                OYNALI BILAN QOPLANGAN TURAR JOYLAR
+                                NAFIS BEZAK ELEMENTLAR
                                 {% else %}
-                                ЗАСТЕКЛЕННЫЕ ЛОДЖИИ
+                                ИЗЯЩНЫЕ ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ
                                 {% endif %}
                             </div>
                         </li>
@@ -530,9 +500,9 @@
                             <img src="{% static 'img/icons/brick.png' %}" alt="">
                             <div class="subtitle ml-3">
                                 {% if request.session.lang == 'uz' %}
-                                MONOLIT - G'ISHT
+                                TABIIY TRAVERTINDAN IBORAT FASAD
                                 {% else %}
-                                МОНОЛИТ- КИРПИЧ
+                                ФАСАД ИЗ НАТУРАЛЬНОГО ТРАВЕРТИНА
                                 {% endif %}
                             </div>
                         </li>
@@ -546,13 +516,13 @@
                 <div class="row m-0 h-100">
                     <div class="map-sidebar">
                         <div class="inner h-100">
-                            <h4>
+                            <h5>
                                 {% if request.session.lang == 'uz' %}
                                 SHAHARDAGI ENG QULAY JOYLASHUV
                                 {% else %}
                                 САМАЯ УДОБНАЯ РАЗВЯЗКА В ГОРОДЕ
                                 {% endif %}
-                            </h4>
+                            </h5>
                             <p style="color:rgb(79, 79, 79);">
                                 {% if request.session.lang == 'uz' %}
                                 Barchasi uydan atigi 15 minutlik masofa
@@ -612,13 +582,13 @@
                                     </li>
                                 </ul>
                             </div>
-                            <h4 class="footer">
+                            <h5 class="footer">
                                 {% if request.session.lang == 'uz' %}
                                 PIYODA
                                 {% else %}
                                 ПЕШКОМ
                                 {% endif %}
-                            </h4>
+                            </h5>
                             <ul class="location-distances list-unstyled">
                                 <li class="item">
                                     <div class="time">
@@ -646,9 +616,9 @@
                                     </div>
                                     <div class="destination">
                                         {% if request.session.lang == 'uz' %}
-                                        3 ta xiyobon
+                                        Buyuk Ipak Yo'li bekati
                                         {% else %}
-                                        Три парка
+                                        Метро Буюк Ипак Йули
                                         {% endif %}
                                     </div>
                                 </li>
@@ -662,9 +632,9 @@
                                     </div>
                                     <div class="destination">
                                         {% if request.session.lang == 'uz' %}
-                                        Delfinarium va muz saroyi
+                                        Parkent bozori
                                         {% else %}
-                                        Дельфинарий и ледовый дворец
+                                        Паркентский рынок
                                         {% endif %}
                                     </div>
                                 </li>
@@ -690,7 +660,7 @@
                                     <p class="content">
                                         {% if request.session.lang == 'uz' %}
                                         Panorama oynalar
-                                        Panorama oynali uylar zamonaviy, obro'li, chiroyli.
+                                        Panorama oynali uylar zamonaviy, nufuzli, chiroyli.
                                         Bunday oynalar xonani maksimal tabiy yorug'lik bilan taminlaydi, xona hajmini vizual kengaytiradi va bino ko'rinishiga chiroy qo'shadi.
                                         Ayniqsa klassik uslubdagi oq saroy kompleksida juda ajoyib ko'rinadi.
                                         {% else %}
@@ -717,7 +687,7 @@
                                     </h4>
                                     <p class="content">
                                         {% if request.session.lang == 'uz' %}
-                                        Uy yaqinida transport chorrahasi - 20 dan ortiq yo'nalishga marshrut
+                                        Uy yaqinida transport chorrahasi - barcha yo'nalishlar bo'ylab 20 dan ortiq qatnovlar.
                                         {% else %}
                                         Транспортная развязка рядом с домом — более 20 маршрутов по всем направлениям.
                                         {% endif %}
@@ -739,10 +709,10 @@
                                     </h4>
                                     <p class="content">
                                         {% if request.session.lang == 'uz' %}
-                                        3000 m<sup>2</sup> hovli maydonida bolalar o'yingohi, dam olish uchun o'rindiqlar, favvoralar, doimiy yoritiladigan 
-                                        ko'chalar mavjud. Shuningdek turar joyning 1-qavatida magazinlar, restoran va fastfudlar mavjud
+                                        Hovli maydonida bolalar o'yingohi, dam olish uchun o'rindiqlar, favvoralar, doimiy yoritiladigan 
+                                        ko'chalar mavjud. Shuningdek turar joyning 1-qavatida do'konlar, restoran va tez oziq-ovqat nuqtalari mavjud.
                                         {% else %}
-                                        Безопасный двор площадью 3000 м<sup>2</sup> c эксклюзивной детской площадкой, беседками, 
+                                        Безопасный двор c эксклюзивной детской площадкой, беседками, 
                                         фонтанами, освещением в любое время суток, а также магазины, ресторан и фаст-фуд, расположенные на первых этажах комплекса.
                                         {% endif %}
                                     </p>
@@ -764,8 +734,7 @@
                                     <p class="content">
                                         {% if request.session.lang == 'uz' %}
                                         Uy yaqinida 4 ta maktab, xususiy va davlat bog'chalari, shifoxonalar, Parkent bozori, SPA - salonlari, 
-                                        go'zallik salonlari. 10 daqiqa piyoda yurib bolalar poliklinikasiga borish mumkin. Uy yaqinida shaharning 
-                                        har burchagiga marshrutlar mavjud.
+                                        go'zallik salonlari. 10 daqiqa piyoda yurib bolalar poliklinikasiga borish mumkin. Uyda shaharning barcha qismlariga yo'nalishlar bilan transport qatnovi mavjud.
                                         {% else %}
                                         Около дома четыре школы, частные и государственные детские сады, больница, Паркентский рынок, 
                                         SPA-салоны, салоны красоты. В десяти минутах пешком - детская поликлиника. У дома транспортная развязка с маршрутами во все концы города.    
@@ -781,7 +750,7 @@
                                 <div class="inner">
                                     <h4 class="header">
                                         {% if request.session.lang == 'uz' %}
-                                        Zamonaviy dizaynli proyektlar
+                                        ZAMONAVIY DIZAYNLI LOYIHALAR
                                         {% else %}
                                         СОВРЕМЕННЫЕ ДИЗАЙН-ПРОЕКТЫ
                                         {% endif %}
@@ -829,12 +798,12 @@
                 <div class="content">
                     <h1 class="text-white">
                         {% if request.session.lang == 'uz' %}
-                        BARCHA OILA UCHUN XONADON
+                        BUTUN OILA UCHUN XONADON
                         {% else %}
                         КВАРТИРА ДЛЯ ВСЕЙ СЕМЬИ
                         {% endif %}
                     </h1>
-                    <a href="#" class="text-white mt-1">
+                    <a href="#planirovka" class="text-white mt-1">
                         {% if request.session.lang == 'uz' %}
                         BATAFSIL
                         {% else %}
@@ -881,12 +850,12 @@
                 <div class="content">
                     <h1 class="text-white">
                         {% if request.session.lang == 'uz' %}
-                        QURILISH ETAPLARI
+                        QURILISH JARAYONLARI
                         {% else %}
                         ЭТАПЫ СТРОИТЕЛЬСТВА
                         {% endif %}
                     </h1>
-                    <a href="#" class="text-white mt-1">
+                    <a href="#planirovka" class="text-white mt-1">
                         {% if request.session.lang == 'uz' %}
                         BATAFSIL
                         {% else %}
@@ -940,9 +909,9 @@
                                     </p>
                                     <p class="subtitle">
                                         {% if request.session.lang == 'uz' %}
-                                        Foydalanishga topshirilgan
+                                        Loyihalar umumiy maydoni
                                         {% else %}
-                                        Введено в эксплуатацию
+                                        Площадь проектов
                                         {% endif %}
                                     </p>
                                 </div>
@@ -964,7 +933,7 @@
                                     <p class="stat">2</p>
                                     <p class="subtitle">
                                         {% if request.session.lang == 'uz' %}
-                                        Turar joy
+                                        Turar-joy Majmualari
                                         {% else %}
                                         Жилых Комплекса
                                         {% endif %}
@@ -976,7 +945,7 @@
                                     <p class="stat">2</p>
                                     <p class="subtitle">
                                         {% if request.session.lang == 'uz' %}
-                                        Avto turargohlar
+                                        Avtoturargohlar
                                         {% else %}
                                         Парковки
                                         {% endif %}

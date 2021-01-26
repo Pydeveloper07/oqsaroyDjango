@@ -9,8 +9,10 @@
         <div class="planirovka-top-mobile">
 			<img src="{% static 'img/icons/arrow-back.png' %}" class="back-arrow" alt="">
 			<div class="block-logo">
-				<img src="{% static 'img/icons/logo_1_1.png' %}" alt="Oq saroy">
-				<img src="{% static 'img/icons/logo_1_2.png' %}" alt="Residence">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'img/icons/logo_1_1.png' %}" alt="Oq saroy">
+                    <img src="{% static 'img/icons/logo_1_2.png' %}" alt="Residence">
+                </a>
 			</div>
 			<button class="alt-map-btn" id="openMap">
 			</button>
@@ -44,8 +46,10 @@
                     <img src="{% static 'img/icons/arrow-back.png' %}" class="back-arrow" id="goBack" alt="">
                 </div>
                 <div class="block-logo">
-                    <img src="{% static 'img/icons/logo_1_1.png' %}" alt="Oq saroy">
-                    <img src="{% static 'img/icons/logo_1_2.png' %}" alt="Residence">
+                    <a href="{% url 'index' %}">
+                        <img src="{% static 'img/icons/logo_1_1.png' %}" alt="Oq saroy">
+                        <img src="{% static 'img/icons/logo_1_2.png' %}" alt="Residence">
+                    </a>
                 </div>
             </div>
             <div class="apartment-indicator">
@@ -94,12 +98,12 @@
                             </span>
                         </div>
                     </div>
-                    <div class="ctrl-btns mt-auto">
+                    <div class="ctrl-btns mt-2">
 						<button class="active" id="simpleImg" data-imgUrl="{{room.image.url}}">
                             {% if request.session.lang == 'uz' %}
-                            Chizma
+                            Joylashuv chizmasi
                             {% else %}
-                            Чертёж
+                            Чертежи макета
                             {% endif %}
                         </button>
 						{% if room.image_3d %}
@@ -107,7 +111,7 @@
                             {% if request.session.lang == 'uz' %}
                             3D chizma
                             {% else %}
-                            Чертёж 3D
+                            3D Чертёж
                             {% endif %}
                         </button>
 						{% endif %}

@@ -147,6 +147,7 @@ body::-webkit-scrollbar{
 }
 .sidebar-nav .nav-item{
     position:relative;
+    margin-bottom: 0.3rem;
 }
 .sidebar .navbar-brand{
     margin-right: 0;
@@ -186,10 +187,13 @@ body::-webkit-scrollbar{
     display: inline-block;
     color: rgba(25, 42, 57, 1);
     font-family: 'tt_normslight';
+    text-transform: uppercase;
     margin-left: 32px;
-    font-size:1.15em;
+    font-size:0.9em;
+    letter-spacing: 1px;
     padding: 8px 16px;
     line-height: 100%;
+    font-weight: bold;
 }
 .site-lang a{
     text-decoration: none;
@@ -370,11 +374,14 @@ body::-webkit-scrollbar{
     width:25%;
     max-width: 25%;
     background: #ebfffc;
-    padding: 3em 2em;
+    padding: 2em 2em;
 }
 .map-sidebar .inner{
     display: flex;
     flex-direction: column;
+}
+.map-sidebar .inner h5{
+    font-weight: bold;
 }
 .map-sidebar h4.footer{
     margin-top: auto;
@@ -600,7 +607,7 @@ body::-webkit-scrollbar{
     position: relative;
 }
 .sidebar-planirovka{
-    width: 27%;
+    width: 30%;
     box-shadow: 15px 0px 20px rgba(10, 36, 55, 0.08);
     padding:1.5em;
 }
@@ -611,10 +618,10 @@ body::-webkit-scrollbar{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
 }
 .sidebar-planirovka .header .back-arrow{
     max-height: 25px !important;
+    cursor: pointer;
 }
 .sidebar .block-logo{
     text-align: center;
@@ -730,13 +737,15 @@ body::-webkit-scrollbar{
     cursor: not-allowed;
 }
 .main-content-planirovka{
-    padding-left:27%;
+    padding-left:30%;
     height: 100vh;
 }
 .main-content-planirovka .main-content-inner{
     position: relative;
     background: #c0fffa;
     height: 100%;
+    display:flex;
+    flex-direction:column;
 }
 .main-content-planirovka .block-label{
     position:absolute;
@@ -796,6 +805,7 @@ body::-webkit-scrollbar{
 .sidebar-floor .floor-indicator .floor-nav .item-active{
     background: #1987CC;
     color: white;
+    cursor: default;
 }
 .sidebar-floor .floor-indicator .room-indicator-block{
     display: none;

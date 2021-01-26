@@ -8,8 +8,10 @@
         <div class="planirovka-top-mobile">
 			<img src="{% static 'img/icons/arrow-back.png' %}" class="back-arrow" alt="">
 			<div class="block-logo">
-				<img src="{% static 'img/icons/logo_1_1.png' %}" alt="Oq saroy">
-				<img src="{% static 'img/icons/logo_1_2.png' %}" alt="Residence">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'img/icons/logo_1_1.png' %}" alt="Oq saroy">
+                    <img src="{% static 'img/icons/logo_1_2.png' %}" alt="Residence">
+                </a>
 			</div>
 			<button class="alt-map-btn" id="openMap">
 			</button>
@@ -43,8 +45,10 @@
                     <img src="{% static 'img/icons/arrow-back.png' %}" class="back-arrow" id="goBack" alt="">
                 </div>
                 <div class="block-logo">
-                    <img src="{% static 'img/icons/logo_1_1.png' %}" alt="Oq saroy">
-                    <img src="{% static 'img/icons/logo_1_2.png' %}" alt="Residence">
+                    <a href="{% url 'index' %}">
+                        <img src="{% static 'img/icons/logo_1_1.png' %}" alt="Oq saroy">
+                        <img src="{% static 'img/icons/logo_1_2.png' %}" alt="Residence">
+                    </a>
                 </div>
             </div>
             <div class="floor-indicator">
@@ -134,9 +138,9 @@
                     </div>
                     <button class="disabled" id="exploreRoom">
                         {% if request.session.lang == 'uz' %}
-                        Xonadonni ko'rmoq
+                        Xonadonni tomosha qilmoq
                         {% else %}
-                        Видеть квартиру
+                        Посмотреть квартиру
                         {% endif %}
                     </button>
                 </div>
