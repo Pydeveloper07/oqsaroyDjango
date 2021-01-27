@@ -2,7 +2,7 @@ $(window).load(function(){
     function preLoader(){
         $('#preloader').fadeOut('slow');
         $('body').css({
-            'overflow': 'scroll'
+            'overflow-y': 'scroll'
         });
     }
     if (!sessionStorage.getItem( 'doNotShow')) {
@@ -11,7 +11,7 @@ $(window).load(function(){
     } else {
         $('#preloader').hide();
         $('body').css({
-            'overflow': 'scroll'
+            'overflow-y': 'scroll'
         });
     }
 });

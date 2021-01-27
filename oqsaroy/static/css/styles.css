@@ -307,6 +307,9 @@ body::-webkit-scrollbar{
     background: url(../img/comfort-1-bg.png) no-repeat;
     background-size: cover;
 }
+.comfort-1 .footer ul li, .section-commerce .footer ul li{
+    width: 30%;
+}
 .comfort .content{
     position:absolute;
     top:50%;
@@ -344,7 +347,7 @@ body::-webkit-scrollbar{
     justify-content: center;
     align-items: center;
     margin-bottom:1rem;
-    width: 25%;
+    width: 23%;
 }
 .comfort .footer .subtitle{
     font-weight:bold;
@@ -545,25 +548,21 @@ body::-webkit-scrollbar{
     background-position: bottom;
     height: 100vh;
     position: relative;
+    padding:2em;
+    overflow-y: scroll;
 }
-.section-progress .content{
-    position:absolute;
-    left:3em;
-    top:50%;
-    transform: translateY(-50%);
-}
-.section-progress .content h1{
+.section-progress h1 {
     font-family: 'tt_normsbold', sans-serif;
 }
-.section-progress .content a{
-    text-decoration: none;
-    background: #224e99;
-    padding: 15px 45px;
-    border-radius:10px;
-    transition: background 300ms;
+.section-progress h1:not(.header){
+    color:white;
+    text-align: center;
 }
-.section-progress .content a:hover{
-    background:#03aebf;
+.section-progress::-webkit-scrollbar{
+    display: none;
+}
+.section-progress .carousel img{
+    height: 65vh;
 }
 .section-about{
     height: 100vh;
