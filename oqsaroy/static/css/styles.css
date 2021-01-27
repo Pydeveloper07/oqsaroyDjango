@@ -29,7 +29,7 @@ body::-webkit-scrollbar{
 }
 .preloaderBg {
     position: fixed;
-    z-index: 9999; 
+    z-index: 9999;
     top: 0;
     background: #fff;
     width: 100%;
@@ -277,7 +277,7 @@ body::-webkit-scrollbar{
     height:100px;
 }
 .section-home .header p{
-    font-weight: 400; 
+    font-weight: 400;
     margin:2rem;
     font-size: 1.7em;
 }
@@ -675,6 +675,7 @@ body::-webkit-scrollbar{
     margin-top: auto;
     margin-bottom: 1rem;
     text-align: center;
+    z-index: 99;
 }
 .sidebar-planirovka .map-alt .inner{
     display: flex;
