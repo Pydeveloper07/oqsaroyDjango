@@ -5,12 +5,12 @@
 {% block title %}Oqsaroy{% endblock %}
 
 {% block content %}
-<div class="preloaderBg" id="preloader">
-    <div class="wrapper">
-        <div class="preloader"></div>
-        <div class="preloader2"></div>
-    </div>
-</div>
+<!--<div class="preloaderBg" id="preloader">-->
+<!--    <div class="wrapper">-->
+<!--        <div class="preloader"></div>-->
+<!--        <div class="preloader2"></div>-->
+<!--    </div>-->
+<!--</div>-->
 <div class="main h-100">
     <nav class="top-nav">
         <button class="toggler">
@@ -509,7 +509,10 @@
                     </ul>
                 </div>
             </section>
-            <section class="section section-planirovka q" id="planirovka">
+            <section class="section section-planirovka position-relative" id="planirovka">
+                <div class="block-alert position-absolute" style="display:none; background: red; color:white; border-radius: 20xp; padding:0.5em; z-index:10; ">
+                    Все квартиры проданы
+                </div>
                 {% include 'partials/planirovka_main.html' %}
             </section>
             <section class="section section-location" id="location">

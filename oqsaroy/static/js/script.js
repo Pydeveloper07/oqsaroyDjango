@@ -16,6 +16,22 @@ $(window).load(function(){
     }
 });
 $(document).ready(function () {
+    $('.section-planirovka').mousemove(function(e){
+        var relX = e.pageX - $(this).offset().left;
+        var relY = e.pageY - $(this).offset().top;
+        $('svg.main .st0.unavailable').mousemove(function(){
+            $('.section-planirovka .block-alert').css({
+                'display': 'block',
+                'left': relX + 10,
+                'top': relY - 50
+            });
+        });
+        $('svg.main .st0.unavailable').mouseout(function(){
+            $('.section-planirovka .block-alert').css({
+                'display': 'none'
+            });
+        });
+    });
     $('body').scrollspy({ target: '#indexSidebar' });
     $('#indexSidebar .nav-link.active').css('color', '#48dbbe');
     $('#indexSidebar .nav-link.active').siblings('.nav-item-indicator').css({'background':'rgba(32, 121, 255, 0.3)'});
@@ -34,17 +50,17 @@ $(document).ready(function () {
             }
         });
     });
-    $('#openMap').click(function() { 
+    $('#openMap').click(function() {
         $('.map-alt').fadeIn(200);
     });
-    $('#closeMap').click(function() { 
+    $('#closeMap').click(function() {
         $('.map-alt').fadeOut(200);
     });
     if ($(window).width() >= 320 && $(window).width() <= 520){
         var top = $('.planirovka-top-mobile').css('height');
         $('.map-alt').css({'top': top});
     }
-    $('#floorUp').click(function () { 
+    $('#floorUp').click(function () {
         let max = $('.building .st0').length;
         let currValue = $('#bFloorLvlIndicator').attr('data-value');
         if (currValue < max){
@@ -54,7 +70,7 @@ $(document).ready(function () {
             updateFloorInfo(currValue);
         }
     });
-    $('#floorDown').click(function () { 
+    $('#floorDown').click(function () {
         let currValue = $('#bFloorLvlIndicator').attr('data-value');
         if (currValue > 0){
             currValue--;
@@ -68,7 +84,7 @@ $(document).ready(function () {
             updateFloorInfo(currValue);
         }
     });
-    $('#roomNext').click(function () { 
+    $('#roomNext').click(function () {
         let max = $('svg.floor .st0').length;
         let currValue = $('#fRoomIndicator').attr('data-value');
         if (currValue < max){
@@ -78,7 +94,7 @@ $(document).ready(function () {
             updateRoomInfo(currValue);
         }
     });
-    $('#roomPrev').click(function () { 
+    $('#roomPrev').click(function () {
         let currValue = $('#fRoomIndicator').attr('data-value');
         if (currValue > 0){
             currValue--;
@@ -136,13 +152,13 @@ $(document).ready(function () {
             btn.addClass('disabled');
         }
     }
-    $('#exploreFloor').click(function() { 
+    $('#exploreFloor').click(function() {
         if ($(this).hasClass('disabled')){
             return;
         }
         window.location.href = $(this).attr('data-url');
     });
-    $('#exploreRoom').click(function() { 
+    $('#exploreRoom').click(function() {
         if ($(this).hasClass('disabled')){
             return;
         }
@@ -154,7 +170,7 @@ $(document).ready(function () {
             $('.section').css({'padding-top':$('.top-nav').css('height') + 'px'});
         }
     });
-    $('.top-nav .toggler').click(function() { 
+    $('.top-nav .toggler').click(function() {
         if ($('#sidebar').width() == 0){
             var width;
             if ($(window).width() < 700 && $(window).width() > 600){
@@ -173,10 +189,10 @@ $(document).ready(function () {
             $('#sidebar').css({'width': 0});
         }
     });
-    $('#sidebar .close').click(function() { 
-        $('#sidebar').css({'width':'0'});        
+    $('#sidebar .close').click(function() {
+        $('#sidebar').css({'width':'0'});
     });
-    $('svg.main .st0').click(function () { 
+    $('svg.main .st0').click(function () {
         if ($(this).attr('class').indexOf('unavailable') !== -1){
             return;
         }
@@ -185,7 +201,7 @@ $(document).ready(function () {
             window.location.href = url;
         }
     });
-    $('svg.building .st0').mouseover(function () { 
+    $('svg.building .st0').mouseover(function () {
         var floorLvl = $(this).attr('data-floor');
         var avalApartments = $(this).attr('data-avalApartments');
         $('#bFloorLvlIndicator').text(floorLvl);
@@ -224,7 +240,7 @@ $(document).ready(function () {
             window.location.href = $(this).attr('data-url');
         }
     });
-    $('#mapBuildings .st0').click(function () { 
+    $('#mapBuildings .st0').click(function () {
         if ($(this).attr('class').indexOf('unavailable') !== -1){
             return;
         }

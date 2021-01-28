@@ -1,10 +1,12 @@
-ymaps.ready(init);
-function init(){   
+$(document).ready(function(){
+    ymaps.ready(init);
+});
+function init(){
     var zoom;
     var filterControls = $('#filterControls');
     if ($(window).width() < 520){
         zoom = 16;
-    }  
+    }
     else{
         zoom = 17;
     }
@@ -15,7 +17,7 @@ function init(){
     });
     map.behaviors.disable('scrollZoom');
     var mainPmark = new ymaps.Placemark(
-        [41.313000, 69.332333], 
+        [41.313000, 69.332333],
         {hintContent:"Oq saroy"},
         {
             iconLayout: 'default#image',
@@ -161,7 +163,7 @@ function init(){
         }
     ]
     var urbanPmark = new ymaps.Placemark(
-        [41.31380925756137, 69.32941343526699], 
+        [41.31380925756137, 69.32941343526699],
         {hintContent:"Urban Stroy"},
         {
             iconLayout: 'default#image',
@@ -233,7 +235,7 @@ function init(){
     map.geoObjects
         .add(mainPmark)
         .add(urbanPmark);
-    $('.filter-controls .filter-item').click(function() { 
+    $('.filter-controls .filter-item').click(function() {
         if ($(this).hasClass('filter-all')){
             var all = restaurantPmarkList.concat(shopPmarkList, hospitalPmarkList, busStopPmarkList, mainPmark, urbanPmark);
             map.geoObjects.removeAll();
