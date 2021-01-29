@@ -1,0 +1,133 @@
+{% load static %}
+<section class="section section-location" id="location">
+    <div class="row m-0 h-100">
+        <div class="map-sidebar">
+            <div class="inner h-100">
+                <h5>
+                    {% if request.session.lang == 'uz' %}
+                    SHAHARDAGI ENG QULAY JOYLASHUV
+                    {% else %}
+                    САМАЯ УДОБНАЯ РАЗВЯЗКА В ГОРОДЕ
+                    {% endif %}
+                </h5>
+                <p style="color:rgb(79, 79, 79);">
+                    {% if request.session.lang == 'uz' %}
+                    Barchasi uydan atigi 15 minutlik masofa
+                    {% else %}
+                    Всё для жизни в 15 минутах от дома
+                    {% endif %}
+                </p>
+                <div>
+                    <ul class="filter-controls list-unstyled" id="filterControls"
+                    data-oqsaroyPmark={% static '/img/oqsaroy_placemark.png' %} data-urbanPmark={% static '/img/urban_pmark.png' %}
+                    data-shopPmark={% static '/img/shop_pmark.png' %} data-restaurantPmark={% static '/img/restaurant_pmark.png' %}
+                    data-busstopPmark={% static '/img/busstop_pmark.png' %} data-hospitalPmark={% static '/img/hospital_pmark.png' %}>
+                        <li class="filter-item filter-all">
+                            <span>
+                                {% if request.session.lang == 'uz' %}
+                                Barcha obyektlar
+                                {% else %}
+                                Все объекты
+                                {% endif %}
+                            </span>
+                        </li>
+                        <li class="filter-item filter-shops">
+                            <span>
+                                {% if request.session.lang == 'uz' %}
+                                Magazin va supermarketlar
+                                {% else %}
+                                Магазины и супермаркеты
+                                {% endif %}
+                            </span>
+                        </li>
+                        <li class="filter-item filter-restaurants">
+                            <span>
+                                {% if request.session.lang == 'uz' %}
+                                Restoran va kafelar
+                                {% else %}
+                                Рестораны и кафе
+                                {% endif %}
+                            </span>
+                        </li>
+                        <li class="filter-item filter-hospitals">
+                            <span>
+                                {% if request.session.lang == 'uz' %}
+                                Shifoxona va poliklinikalar
+                                {% else %}
+                                Больница и поликлиника
+                                {% endif %}
+                            </span>
+                        </li>
+                        <li class="filter-item filter-busstops">
+                            <span>
+                                {% if request.session.lang == 'uz' %}
+                                Bekatlar
+                                {% else %}
+                                Остановки
+                                {% endif %}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <h5 class="footer">
+                    {% if request.session.lang == 'uz' %}
+                    PIYODA
+                    {% else %}
+                    ПЕШКОМ
+                    {% endif %}
+                </h5>
+                <ul class="location-distances list-unstyled">
+                    <li class="item">
+                        <div class="time">
+                            {% if request.session.lang == 'uz' %}
+                            10 min
+                            {% else %}
+                            10 мин
+                            {% endif %}
+                        </div>
+                        <div class="destination">
+                            {% if request.session.lang == 'uz' %}
+                            Bolalar poliklinikasi
+                            {% else %}
+                            Детская поликлиника
+                            {% endif %}
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="time">
+                            {% if request.session.lang == 'uz' %}
+                            10 min
+                            {% else %}
+                            10 мин
+                            {% endif %}
+                        </div>
+                        <div class="destination">
+                            {% if request.session.lang == 'uz' %}
+                            Buyuk Ipak Yo'li bekati
+                            {% else %}
+                            Метро Буюк Ипак Йули
+                            {% endif %}
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="time">
+                            {% if request.session.lang == 'uz' %}
+                            10 min
+                            {% else %}
+                            10 мин
+                            {% endif %}
+                        </div>
+                        <div class="destination">
+                            {% if request.session.lang == 'uz' %}
+                            Parkent bozori
+                            {% else %}
+                            Паркентский рынок
+                            {% endif %}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="map" style="height: 100%; width: 75%;"></div>
+    </div>
+</section>

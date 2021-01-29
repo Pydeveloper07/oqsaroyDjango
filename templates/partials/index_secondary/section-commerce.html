@@ -1,0 +1,51 @@
+{% load static %}
+    <div class="content">
+        <h1 class="text-white mb-5">
+            {% if request.session.lang == 'uz' %}
+            BUTUN OILA UCHUN XONADON
+            {% else %}
+            КВАРТИРА ДЛЯ ВСЕЙ СЕМЬИ
+            {% endif %}
+        </h1>
+        <a href="#planirovka" class="text-white mt-1">
+            {% if request.session.lang == 'uz' %}
+            BATAFSIL
+            {% else %}
+            УЗНАТЬ БОЛЬШЕ
+            {% endif %}
+        </a>
+    </div>
+    <div class="footer">
+        <ul class="list-unstyled m-0">
+            <li class="text-white">
+                <img src="{% static 'img/icons/icon.png' %}" alt="">
+                <div class="subtitle ml-3">
+                    {% if request.session.lang == 'uz' %}
+                    57 DAN 263 GACHA BO'LGAN MAYDONLAR
+                    {% else %}
+                    ПЛОЩАДЫ ОТ 57 ДО 263
+                    {% endif %}
+                </div>
+            </li>
+            <li class="text-white">
+                <img src="{% static 'img/icons/family.png' %}" alt="">
+                <div class="subtitle ml-3">
+                    {% if request.session.lang == 'uz' %}
+                    HAR QANDAY OILA UCHUN
+                    {% else %}
+                    ПОДХОДЯТ ДЛЯ ЛЮБЫХ СЕМЕЙ
+                    {% endif %}
+                </div>
+            </li>
+            <li class="text-white">
+                <img src="{% static 'img/icons/doors.png' %}" alt="">
+                <div class="subtitle ml-3">
+                    {% if request.session.lang == 'uz' %}
+                    ZAMONAVIY PODYEZD
+                    {% else %}
+                    СОВРЕМЕННЫЙ ПОДЪЕЗД
+                    {% endif %}
+                </div>
+            </li>
+        </ul>
+    </div>

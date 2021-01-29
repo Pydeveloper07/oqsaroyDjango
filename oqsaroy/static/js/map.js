@@ -1,6 +1,3 @@
-$(document).ready(function(){
-    ymaps.ready(init);
-});
 function init(){
     var zoom;
     var filterControls = $('#filterControls');

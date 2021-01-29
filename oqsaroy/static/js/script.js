@@ -14,8 +14,29 @@ $(window).load(function(){
             'overflow-y': 'scroll'
         });
     }
+    $.ajax({
+        type: "POST",
+        url: $('body').attr('data-secondaryUrl'),
+        data: {'csrfmiddlewaretoken': $('body').attr('data-csrf')},
+        success : function(response) {
+            $('section.comfort-1').html(response.section_comfort_1);
+            $('section.comfort-2').html(response.section_comfort_2);
+            $('section.comfort-3').html(response.section_comfort_3);
+            $('section.comfort-4').html(response.section_comfort_4);
+            $('#advantages').html(response.section_advantages);
+            $('#commerce').html(response.section_commerce);
+            $('#progress').html(response.section_progress);
+            $('#about').html(response.section_about);
+        }
+    });
 });
 $(document).ready(function () {
+    ymaps.ready(init);
+    $('#indexSidebar a').click(function(){
+        if ($(window).width() <= 1100){
+            $('#sidebar').css('width', '0');
+        }
+    });
     $('.section-planirovka').mousemove(function(e){
         var relX = e.pageX - $(this).offset().left;
         var relY = e.pageY - $(this).offset().top;

@@ -1,0 +1,194 @@
+{% load static %}
+<div class="sidebar" id="sidebar">
+    <div class="inner">
+        <button class="close">
+            &#10005;
+        </button>
+        <nav class="sidebar-nav" id="indexSidebar">
+            <a href="#home" class="navbar-brand mb-4">
+                <img src="{% static 'img/icons/logo_1_1.png' %}" alt="Oq saroy">
+                <img src="{% static 'img/icons/logo_1_2.png' %}" alt="Residence">
+            </a>
+            <ul class="nav-list list-unstyled">
+                <li class="nav-item">
+                    <div class="nav-item-indicator">
+                        <div class="layer-1">
+                            <div class="layer-0"></div>
+                        </div>
+                    </div>
+                    <a class="nav-link active" href="#home">
+                        {% if request.session.lang == 'uz' %}
+                        Bosh sahifa
+                        {% else %}
+                        Главная
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-item-indicator">
+                        <div class="layer-1">
+                            <div class="layer-0"></div>
+                        </div>
+                    </div>
+                    <a class="nav-link" href="#comfort">
+                        {% if request.session.lang == 'uz' %}
+                        Qulaylik
+                        {% else %}
+                        Комфорт
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-item-indicator">
+                        <div class="layer-1">
+                            <div class="layer-0"></div>
+                        </div>
+                    </div>
+                    <a class="nav-link" href="#planirovka">
+                        {% if request.session.lang == 'uz' %}
+                        Joylashuv chizmalari
+                        {% else %}
+                        Планировки
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-item-indicator">
+                        <div class="layer-1">
+                            <div class="layer-0"></div>
+                        </div>
+                    </div>
+                    <a class="nav-link" href="#location">
+                        {% if request.session.lang == 'uz' %}
+                        Joylashuv
+                        {% else %}
+                        Расположение
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-item-indicator">
+                        <div class="layer-1">
+                            <div class="layer-0"></div>
+                        </div>
+                    </div>
+                    <a class="nav-link" href="#advantages">
+                        {% if request.session.lang == 'uz' %}
+                        Afzalliklar
+                        {% else %}
+                        Преимущества
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-item-indicator">
+                        <div class="layer-1">
+                            <div class="layer-0"></div>
+                        </div>
+                    </div>
+                    <a class="nav-link" href="#commerce">
+                        {% if request.session.lang == 'uz' %}
+                        Butun oila uchun xonadon
+                        {% else %}
+                        Квартира для всей семьи
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-item-indicator">
+                        <div class="layer-1">
+                            <div class="layer-0"></div>
+                        </div>
+                    </div>
+                    <a class="nav-link" href="#progress">
+                        {% if request.session.lang == 'uz' %}
+                        Qurulish jarayoni
+                        {% else %}
+                        Этапы строительства
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-item-indicator">
+                        <div class="layer-1">
+                            <div class="layer-0"></div>
+                        </div>
+                    </div>
+                    <a class="nav-link" href="#about">
+                        {% if request.session.lang == 'uz' %}
+                        Kompaniya haqida
+                        {% else %}
+                        О компании
+                        {% endif %}
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="site-lang">
+            <a href="{% url 'ru' %}"
+            {% if 'ru' in request.path %}
+            class="active"
+            {% endif %}>
+                <img src="{% static 'img/icons/flag-russian-round-250.png' %}" width="13px" height="13px" alt=""> Рус
+            </a>
+            <a href="{% url 'uz' %}"
+            {% if 'uz' in request.path %}
+            class="active"
+            {% endif %}>
+                <img src="{% static 'img/icons/flag-uzb-round-250.png' %}" width="13px" height="13px" alt=""> O‘zb
+            </a>
+        </div>
+        <div class="sidebar-footer">
+            <dl>
+                <dt>
+                    {% if request.session.lang == 'uz' %}
+                    Biz bilan bog'lanish
+                    {% else %}
+                    Связаться с нами
+                    {% endif %}
+                </dt>
+                <dd>+998 97 777 11 66</dd>
+                <dt>
+                    {% if request.session.lang == 'uz' %}
+                    Manzil
+                    {% else %}
+                    Адрес
+                    {% endif %}
+                </dt>
+                <dd>
+                    {% if request.session.lang == 'uz' %}
+                    Yashnabod tumani, massiv Parkent, M.Riyoziy, 6/7-uy, 3-xonadon
+                    {% else %}
+                    Яшнабадский район, массив Паркент, М.Риезий, дом 6/7 квартира-3
+                    {% endif %}
+                </dd>
+            </dl>
+            <ul class="social-media">
+                <a href="http://www.instagram.com/urbanstroy.uz" target="_blank">
+                    <img src="{% static 'img/icons/Instagram-Icon.png' %}" alt="">
+                    <div class="social-name">
+                        <div class="position-relative">
+                            <span>@urbanstroy.uz</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="http://www.facebook.com/urbanstroy.uz" target="_blank">
+                    <img src="{% static 'img/icons/facebook-icon-alt.png' %}" alt="">
+                    <div class="social-name">
+                        <div class="position-relative">
+                            <span>@urbanstroy.uz</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="http://t.me/urban_stroyuz" target="_blank">
+                    <img src="{% static 'img/icons/Telegram-Icon.png' %}" alt="">
+                    <div class="social-name">
+                        <div class="position-relative">
+                            <span>@urbanstroyuzb</span>
+                        </div>
+                    </div>
+                </a>
+            </ul>
+        </div>
+    </div>
+</div>

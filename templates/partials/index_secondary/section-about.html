@@ -1,0 +1,94 @@
+{% load static %}
+    <div class="inner">
+        <div class="block-logo">
+            <img src="{% static 'img/icons/urban_logo.png' %}" alt="Urban Stroy">
+        </div>
+        <h2>
+            {% if request.session.lang == 'uz' %}
+            URBANSTROY KOMPANIYASI HAQIDA
+            {% else %}
+            О КОМПАНИИ URBAN STROY
+            {% endif %}
+        </h2>
+        <div class="content">
+            <p>
+                {% if request.session.lang == 'uz' %}
+                Urbanstroy - turar joy qurulishi sohasidagi katta tajribaga ega bo'lgan,
+                jadal rivojlanayotgan qurulish kompaniyasidir.
+                {% else %}
+                Urbanstroy - является динамично развивающейся строительной компанией с большим
+                опытом работы в сфере жилищного строительства.
+                {% endif %}
+            </p>
+            <p>
+                {% if request.session.lang == 'uz' %}
+                Kompaniya keng qamrovli turar joy qurulishlarini olib boradi: premium va biznes-klassdan
+                tortib, qulay uylargacha.
+                {% else %}
+                Компания реализует широкий спектр проектов жилищного строительства различных типов и классов:
+                от эксклюзивных объектов премиум и бизнес-класса до комфортного жилья.
+                {% endif %}
+            </p>
+        </div>
+        <div class="statistics">
+            <div class="row m-0">
+                <div class="col-md-3 col-sm-6 element">
+                    <div class="text-center">
+                        <p class="stat">
+                            {% if request.session.lang == 'uz' %}
+                            +11 000 m<sup>2</sup>
+                            {% else %}
+                            +11 000 м<sup>2</sup>
+                            {% endif %}
+                        </p>
+                        <p class="subtitle">
+                            {% if request.session.lang == 'uz' %}
+                            Loyihalar umumiy maydoni
+                            {% else %}
+                            Площадь проектов
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 element">
+                    <div class="text-center">
+                        <p class="stat">300+</p>
+                        <p class="subtitle">
+                            {% if request.session.lang == 'uz' %}
+                            Baxtli oilalar
+                            {% else %}
+                            Счастливые Семьи
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 element">
+                    <div class="text-center">
+                        <p class="stat">2</p>
+                        <p class="subtitle">
+                            {% if request.session.lang == 'uz' %}
+                            Turar-joy Majmualari
+                            {% else %}
+                            Жилых Комплекса
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 element">
+                    <div class="text-center">
+                        <p class="stat">2</p>
+                        <p class="subtitle">
+                            {% if request.session.lang == 'uz' %}
+                            Avtoturargohlar
+                            {% else %}
+                            Парковки
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <a href="https://urbanstroy.uz" class="link" target="blank">urbanstroy.uz</a>
+        </div>
+    </div>

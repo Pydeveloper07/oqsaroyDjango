@@ -1,0 +1,58 @@
+{% load static %}
+    <div class="content">
+        <h1 class="text-white">
+            {% if request.session.lang == 'uz' %}
+            ENG BEG'UBOR BOLALIK
+            {% else %}
+            САМОЕ ДЛИННОЕ ДЕТСТВО
+            {% endif %}
+        </h1>
+        <p class="text-white">
+            {% if request.session.lang == 'uz' %}
+            O'yin kulgu uchun xavfsiz hudud
+            {% else %}
+            Безопасное место для игр и развлечений
+            {% endif %}
+        </p>
+        <a href="#planirovka" class="text-white">
+            {% if request.session.lang == 'uz' %}
+            BATAFSIL
+            {% else %}
+            УЗНАТЬ БОЛЬШЕ
+            {% endif %}
+        </a>
+    </div>
+    <div class="footer">
+        <ul class="list-unstyled m-0">
+            <li class="text-white">
+                <img src="{% static 'img/icons/home.png' %}" alt="">
+                <div class="subtitle ml-3">
+                    {% if request.session.lang == 'uz' %}
+                    O'YINGOHLAR
+                    {% else %}
+                    ИГРОВЫЕ КОМПЛЕКСЫ
+                    {% endif %}
+                </div>
+            </li>
+            <li class="text-white">
+                <img src="{% static 'img/icons/camera.png' %}" alt="">
+                <div class="subtitle ml-3">
+                    {% if request.session.lang == 'uz' %}
+                    XAVFSIZ HUDUD
+                    {% else %}
+                    БЕЗОПАСНОЕ ПОКРЫТИЕ
+                    {% endif %}
+                </div>
+            </li>
+            <li class="text-white">
+                <img src="{% static 'img/icons/factoids.png' %}" alt="">
+                <div class="subtitle ml-3">
+                    {% if request.session.lang == 'uz' %}
+                    SPORT MAYDONCHALARI
+                    {% else %}
+                    CПОРТИВНЫЕ ПЛОЩАДКИ
+                    {% endif %}
+                </div>
+            </li>
+        </ul>
+    </div>    

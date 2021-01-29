@@ -1,0 +1,68 @@
+{% load static %}
+    <div class="content">
+        <h1 class="text-white">
+            {% if request.session.lang == 'uz' %}
+            PUHTA O'YLANGAN HOVLI
+            {% else %}
+            САМЫЙ ПРОДУМАННЫЙ ДВОР
+            {% endif %}
+        </h1>
+        <p class="text-white">
+            {% if request.session.lang == 'uz' %}
+            Hotirjam sayr uchun yorqin xiyobonlar
+            {% else %}
+            Освещенные аллеи для неспешных прогулок
+            {% endif %}
+        </p>
+        <a href="#planirovka" class="text-white">
+            {% if request.session.lang == 'uz' %}
+            BATAFSIL
+            {% else %}
+            УЗНАТЬ БОЛЬШЕ
+            {% endif %}
+        </a>
+    </div>
+    <div class="footer">
+        <ul class="list-unstyled m-0">
+            <li class="text-white">
+                <img src="{% static 'img/icons/road-barrier.png' %}" alt="">
+                <div class="subtitle ml-3">
+                    {% if request.session.lang == 'uz' %}
+                    YOPIQ HUDUD
+                    {% else %}
+                    ЗАКРЫТАЯ ТЕРРИТОРИЯ
+                    {% endif %}
+                </div>
+            </li>
+            <li class="text-white">
+                <img src="{% static 'img/icons/wifi.png' %}" alt="">
+                <div class="subtitle ml-3">
+                    {% if request.session.lang == 'uz' %}
+                    INTERNET
+                    {% else %}
+                    ИНТЕРНЕТ
+                    {% endif %}
+                </div>
+            </li>
+            <li class="text-white">
+                <img src="{% static 'img/icons/besedka.png' %}" alt="">
+                <div class="subtitle ml-3">
+                    {% if request.session.lang == 'uz' %}
+                    HORDIQ CHIQARISH UCHUN SHIYPONCHALAR
+                    {% else %}
+                    БЕСЕДКИ ДЛЯ ОТДЫХА
+                    {% endif %}
+                </div>
+            </li>
+            <li class="text-white">
+                <img src="{% static 'img/icons/camera-alt.png' %}" alt="">
+                <div class="subtitle ml-3">
+                    {% if request.session.lang == 'uz' %}
+                    QO'RIQLANADIGAN AVTOTURARGOHLAR
+                    {% else %}
+                    ОХРАНЯЕМАЯ ПАРКОВКА
+                    {% endif %}
+                </div>
+            </li>
+        </ul>
+    </div>
