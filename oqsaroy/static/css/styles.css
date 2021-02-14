@@ -262,7 +262,7 @@ body::-webkit-scrollbar{
     opacity: 1;
 }
 .section-home{
-    height:100vh;
+    /* height:100vh; */
     background: url(../img/home-bg.png) no-repeat;
     background-size: cover;
     position: relative;
@@ -301,7 +301,7 @@ body::-webkit-scrollbar{
 .comfort{
     padding:2em;
     position: relative;
-    height:100vh;
+    /* height:100vh; */
 }
 .comfort-1{
     background: url(../img/comfort-1-bg.png) no-repeat;
@@ -371,7 +371,7 @@ body::-webkit-scrollbar{
     background-size: cover;
 }
 .section-location{
-    height:100vh;
+    /* height:100vh; */
 }
 .map-sidebar{
     width:25%;
@@ -454,7 +454,7 @@ body::-webkit-scrollbar{
 }
 .section-advantages{
     overflow: hidden;
-    height: 100vh;
+    /* height: 100vh; */
 }
 .section-advantages .inner{
     display: flex;
@@ -502,7 +502,7 @@ body::-webkit-scrollbar{
     background-size: cover;
     padding:2em;
     position: relative;
-    height:100vh;
+    /* height:100vh; */
 }
 .section-commerce .content{
     position:absolute;
@@ -546,7 +546,7 @@ body::-webkit-scrollbar{
     background: url(../img/progress-bg.png) no-repeat;
     background-size: cover;
     background-position: bottom;
-    height: 100vh;
+    /* height: 100vh; */
     position: relative;
     padding:2em;
     overflow-y: scroll;
@@ -565,7 +565,7 @@ body::-webkit-scrollbar{
     height: 65vh;
 }
 .section-about{
-    height: 100vh;
+    /* height: 100vh; */
     padding: 5em;
     background: #F7FCFF;
     overflow: hidden;

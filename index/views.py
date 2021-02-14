@@ -23,14 +23,14 @@ def index_uz(request):
     return render(request, 'index/index.html', context)
 
 def load_secondary_contents(request):
-    section_comfort_1 = render_to_string('partials/index_secondary/section-comfort-1.html')
-    section_comfort_2 = render_to_string('partials/index_secondary/section-comfort-2.html')
-    section_comfort_3 = render_to_string('partials/index_secondary/section-comfort-3.html')
-    section_comfort_4 = render_to_string('partials/index_secondary/section-comfort-4.html')
-    section_advantages = render_to_string('partials/index_secondary/section-advantages.html')
-    section_commerce = render_to_string('partials/index_secondary/section-commerce.html')
-    section_progress = render_to_string('partials/index_secondary/section-progress.html')
-    section_about = render_to_string('partials/index_secondary/section-about.html')
+    section_comfort_1 = render_to_string('partials/index_secondary/section-comfort-1.html', request=request)
+    section_comfort_2 = render_to_string('partials/index_secondary/section-comfort-2.html', request=request)
+    section_comfort_3 = render_to_string('partials/index_secondary/section-comfort-3.html', request=request)
+    section_comfort_4 = render_to_string('partials/index_secondary/section-comfort-4.html', request=request)
+    section_advantages = render_to_string('partials/index_secondary/section-advantages.html', request=request)
+    section_commerce = render_to_string('partials/index_secondary/section-commerce.html', request=request)
+    section_progress = render_to_string('partials/index_secondary/section-progress.html', request=request)
+    section_about = render_to_string('partials/index_secondary/section-about.html', request=request)
     context = {
         'section_comfort_1': section_comfort_1,
         'section_comfort_2': section_comfort_2,

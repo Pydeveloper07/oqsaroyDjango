@@ -6,6 +6,10 @@
 
 {% block title %}Oqsaroy{% endblock %}
 
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/fullpage.min.css' %}">
+{% endblock %}
+
 {% block content %}
 <div class="preloaderBg" id="preloader">
     <div class="wrapper">
@@ -25,12 +29,12 @@
             </a>
         </div>
         <div class="ml-auto block-contact">
-            <span class="contact">+998 97 777 11 66</span>
+            <a href="tel: +998977771166"><span class="contact">+998 97 777 11 66</span></a>
         </div>
     </nav>
-    {% include_by_ajax 'partials/index_secondary/sidebar.html' %}
+    {% include 'partials/index_secondary/sidebar.html' %}
     <div class="main-content">
-        <div class="main-content-inner">
+        <div class="main-content-inner" id="fullpage">
             <section class="section section-home" id='home'>
                 <div class="header text-center">
                     <div class="logo-block">
@@ -53,13 +57,13 @@
                     </a>
                 </div>
             </section>
-            <section class="section comfort comfort-1" id="comfort">
+            <section class="section comfort comfort-1" id="comfort_1">
             </section>
-            <section class="section comfort comfort-2">
+            <section class="section comfort comfort-2" id="comfort_2">
             </section>
-            <section class="section comfort comfort-3">
+            <section class="section comfort comfort-3" id="comfort_3">
             </section>
-            <section class="section comfort comfort-4">
+            <section class="section comfort comfort-4" id="comfort_4">
             </section>
             <section class="section section-planirovka position-relative" id="planirovka">
                 <div class="block-alert position-absolute" style="display:none; background: red; color:white; border-radius: 20xp; padding:0.5em; z-index:10; ">
@@ -67,10 +71,10 @@
                 </div>
                 {% include 'partials/planirovka_main.html' %}
             </section>
-            {% include_by_ajax 'partials/index_secondary/section-location.html' %}
+            {% include 'partials/index_secondary/section-location.html' %}
             <section class="section section-advantages" id="advantages">
             </section>
-            <section class="section section-commerce" style="height: 100vh;" id="commerce">
+            <section class="section section-commerce" id="commerce">
             </section>
             <section class="section section-progress" id="progress">
             </section>
@@ -86,9 +90,17 @@
         type="text/javascript">
 </script>
 <script src="{% static 'js/map.js' %}"></script>
+<!-- <script src="{% static 'js/smooth-scroll.polyfills.min.js' %}"></script> -->
+<script src="{% static 'js/fullpage.min.js' %}"></script>
 <script>
     $(document).ready(function () {
-        var divs = $('.section');
+        // Initialize smooth scroll
+        /*var scroll = new SmoothScroll('a[href*="#"]', {
+            speed: 500
+        });*/
+        
+    
+        /* var divs = $('.section');
         var dir = 'up'; // wheel scroll direction
         var div = 0; // current div
         $(document.body).on('DOMMouseScroll mousewheel', function (e) {
@@ -122,7 +134,7 @@
             if ($(window).width() > 1100){
                 $('html,body').scrollTop(divs.eq(div).offset().top);
             }
-        });
+        }); */
     });
 </script>
 {% endblock %}

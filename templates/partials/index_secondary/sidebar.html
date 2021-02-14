@@ -9,14 +9,14 @@
                 <img src="{% static 'img/icons/logo_1_1.png' %}" alt="Oq saroy">
                 <img src="{% static 'img/icons/logo_1_2.png' %}" alt="Residence">
             </a>
-            <ul class="nav-list list-unstyled">
-                <li class="nav-item">
+            <ul class="nav-list list-unstyled" id="menu">
+                <li class="nav-item" data-menuanchor="section-home">
                     <div class="nav-item-indicator">
                         <div class="layer-1">
                             <div class="layer-0"></div>
                         </div>
                     </div>
-                    <a class="nav-link active" href="#home">
+                    <a class="nav-link active" href="#section-home">
                         {% if request.session.lang == 'uz' %}
                         Bosh sahifa
                         {% else %}
@@ -24,13 +24,13 @@
                         {% endif %}
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-menuanchor="section-comfort_1">
                     <div class="nav-item-indicator">
                         <div class="layer-1">
                             <div class="layer-0"></div>
                         </div>
                     </div>
-                    <a class="nav-link" href="#comfort">
+                    <a class="nav-link" href="#section-comfort_1">
                         {% if request.session.lang == 'uz' %}
                         Qulaylik
                         {% else %}
@@ -38,13 +38,13 @@
                         {% endif %}
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-menuanchor="section-planirovka">
                     <div class="nav-item-indicator">
                         <div class="layer-1">
                             <div class="layer-0"></div>
                         </div>
                     </div>
-                    <a class="nav-link" href="#planirovka">
+                    <a class="nav-link" href="#section-planirovka">
                         {% if request.session.lang == 'uz' %}
                         Joylashuv chizmalari
                         {% else %}
@@ -52,13 +52,13 @@
                         {% endif %}
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-menuanchor="section-location">
                     <div class="nav-item-indicator">
                         <div class="layer-1">
                             <div class="layer-0"></div>
                         </div>
                     </div>
-                    <a class="nav-link" href="#location">
+                    <a class="nav-link" href="#section-location">
                         {% if request.session.lang == 'uz' %}
                         Joylashuv
                         {% else %}
@@ -66,13 +66,13 @@
                         {% endif %}
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-menuanchor="section-advantages">
                     <div class="nav-item-indicator">
                         <div class="layer-1">
                             <div class="layer-0"></div>
                         </div>
                     </div>
-                    <a class="nav-link" href="#advantages">
+                    <a class="nav-link" href="#section-advantages">
                         {% if request.session.lang == 'uz' %}
                         Afzalliklar
                         {% else %}
@@ -80,13 +80,13 @@
                         {% endif %}
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-menuanchor="section-commerce">
                     <div class="nav-item-indicator">
                         <div class="layer-1">
                             <div class="layer-0"></div>
                         </div>
                     </div>
-                    <a class="nav-link" href="#commerce">
+                    <a class="nav-link" href="#section-commerce">
                         {% if request.session.lang == 'uz' %}
                         Butun oila uchun xonadon
                         {% else %}
@@ -94,13 +94,13 @@
                         {% endif %}
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-menuanchor="section-progress">
                     <div class="nav-item-indicator">
                         <div class="layer-1">
                             <div class="layer-0"></div>
                         </div>
                     </div>
-                    <a class="nav-link" href="#progress">
+                    <a class="nav-link" href="#section-progress">
                         {% if request.session.lang == 'uz' %}
                         Qurulish jarayoni
                         {% else %}
@@ -108,13 +108,13 @@
                         {% endif %}
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-menuanchor="section-about">
                     <div class="nav-item-indicator">
                         <div class="layer-1">
                             <div class="layer-0"></div>
                         </div>
                     </div>
-                    <a class="nav-link" href="#about">
+                    <a class="nav-link" href="#section-about">
                         {% if request.session.lang == 'uz' %}
                         Kompaniya haqida
                         {% else %}
@@ -147,7 +147,7 @@
                     Связаться с нами
                     {% endif %}
                 </dt>
-                <dd>+998 97 777 11 66</dd>
+                <dd><a href="tel: +998977771166">+998 97 777 11 66</a></dd>
                 <dt>
                     {% if request.session.lang == 'uz' %}
                     Manzil
